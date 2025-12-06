@@ -1,0 +1,90 @@
+.taxi-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.taxi-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.taxi-option {
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.taxi-option:hover {
+  border-color: #10b981;
+  background: #f0fdf4;
+}
+
+.taxi-option.selected {
+  border-color: #10b981;
+  background: #f0fdf4;
+}
+
+.taxi-option-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.taxi-type {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 1.1rem;
+}
+
+.taxi-price {
+  font-weight: 700;
+  color: #10b981;
+  font-size: 1.2rem;
+}
+
+.taxi-features {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.taxi-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.estimated-price {
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.estimated-price h4 {
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+.price-display {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #10b981;
+}
+
+.note {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
