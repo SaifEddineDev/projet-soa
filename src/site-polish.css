@@ -183,18 +183,22 @@ img { max-width: 100%; }
 .main-content:not(:has(.admin-container)) .hotel-price strong { font-weight: 850; }
 .main-content:not(:has(.admin-container)) .hotel-price small { margin-top: 3px; color: #76889a; font-size: .66rem; font-weight: 600; }
 .main-content:not(:has(.admin-container)) .hotel-location { display: flex; align-items: center; gap: 7px; margin-bottom: 9px; font-size: .86rem; }
-.main-content:not(:has(.admin-container)) .hotel-rating { gap: 8px; margin-bottom: 9px; }
-.main-content:not(:has(.admin-container)) .hotel-rating .rating-value { display: inline-flex; align-items: baseline; gap: 2px; padding: 6px 9px; border-radius: 8px; font-size: .9rem; font-weight: 850; }
-.main-content:not(:has(.admin-container)) .hotel-rating .rating-value small { font-size: .66rem; font-weight: 700; opacity: .9; }
-.main-content:not(:has(.admin-container)) .hotel-rating .stars { display: none; }
+.main-content:not(:has(.admin-container)) .hotel-rating { display: flex; align-items: center; gap: 8px; margin-bottom: 9px; }
+.main-content:not(:has(.admin-container)) .rating-stars { position: relative; display: inline-block; overflow: hidden; font-size: 1.18rem; letter-spacing: 2px; line-height: 1; white-space: nowrap; }
+.main-content:not(:has(.admin-container)) .rating-stars-empty { display: block; color: #d9e1e8; }
+.main-content:not(:has(.admin-container)) .rating-stars-filled { position: absolute; top: 0; left: 0; overflow: hidden; color: #f5a623; text-shadow: 0 2px 5px rgba(245,166,35,.25); white-space: nowrap; }
 .main-content:not(:has(.admin-container)) .hotel-description { display: -webkit-box; min-height: 42px; flex: 1; overflow: hidden; margin-bottom: 10px; color: #607487; font-size: .87rem; line-height: 1.5; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 .main-content:not(:has(.admin-container)) .hotel-amenities { min-height: 29px; gap: 6px; margin-bottom: 10px; }
 .main-content:not(:has(.admin-container)) .amenity-tag { padding: 5px 8px; border: 1px solid #e8eef3; border-radius: 8px; color: #31546b; background: #f4f8fa; font-size: .73rem; font-weight: 650; }
 .main-content:not(:has(.admin-container)) .hotel-actions { gap: 9px; margin-top: auto; padding-top: 11px; border-top: 1px solid #e5edf2; }
-.main-content:not(:has(.admin-container)) .hotel-actions button { display: inline-flex; min-width: 0; min-height: 42px; align-items: center; justify-content: center; gap: 8px; border-radius: 9px; font-size: .86rem; font-weight: 750; transition: transform .18s ease, box-shadow .18s ease, background .18s ease; }
-.main-content:not(:has(.admin-container)) .hotel-actions .btn-details { background: #3478e5; }
-.main-content:not(:has(.admin-container)) .hotel-actions .btn-book { background: #0caf7a; }
-.main-content:not(:has(.admin-container)) .hotel-actions button:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(16,42,67,.15); }
+.main-content:not(:has(.admin-container)) .hotel-actions button { position: relative; display: inline-flex; min-width: 0; min-height: 46px; align-items: center; justify-content: center; gap: 9px; overflow: hidden; border: 0; border-radius: 11px; color: #fff; font-size: .88rem; font-weight: 800; letter-spacing: .01em; box-shadow: 0 5px 12px rgba(16,42,67,.13), inset 0 1px rgba(255,255,255,.2); transition: transform .18s ease, box-shadow .18s ease, filter .18s ease; }
+.main-content:not(:has(.admin-container)) .hotel-actions .btn-details { background: linear-gradient(135deg, #4387f5, #2866d7); }
+.main-content:not(:has(.admin-container)) .hotel-actions .btn-book { background: linear-gradient(135deg, #13bd88, #07986d); }
+.main-content:not(:has(.admin-container)) .hotel-actions button span { display: grid; width: 23px; height: 23px; place-items: center; border: 1px solid rgba(255,255,255,.28); border-radius: 50%; background: rgba(255,255,255,.15); font-size: .8rem; transition: transform .18s ease, background .18s ease; }
+.main-content:not(:has(.admin-container)) .hotel-actions button:hover { transform: translateY(-2px); filter: saturate(1.08); box-shadow: 0 9px 18px rgba(16,42,67,.2), inset 0 1px rgba(255,255,255,.24); }
+.main-content:not(:has(.admin-container)) .hotel-actions .btn-details:hover span { transform: translate(2px,-2px); background: rgba(255,255,255,.25); }
+.main-content:not(:has(.admin-container)) .hotel-actions .btn-book:hover span { transform: translateX(3px); background: rgba(255,255,255,.25); }
+.main-content:not(:has(.admin-container)) .hotel-actions button:focus-visible { outline: 3px solid rgba(11,88,115,.3); outline-offset: 3px; }
 .main-content:not(:has(.admin-container)) .hotels-map-container { min-width: 0; }
 @media (max-width: 900px) {
   .main-content:not(:has(.admin-container)) .hotels-container { grid-template-columns: minmax(0, 1fr); }

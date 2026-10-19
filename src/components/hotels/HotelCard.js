@@ -24,7 +24,14 @@ const HotelCard = ({ hotel }) => {
         </div>
         <div className="hotel-location"><span aria-hidden="true">📍</span>{hotel.location}</div>
         <div className="hotel-rating">
-          <span className="rating-value" aria-label={`Note : ${hotel.rating} sur 5`}>{hotel.rating}<small>/5</small></span>
+          <span className="rating-stars" role="img" aria-label={`Note : ${hotel.rating} sur 5`}>
+            <span className="rating-stars-empty" aria-hidden="true">★★★★★</span>
+            <span
+              className="rating-stars-filled"
+              aria-hidden="true"
+              style={{ width: `${Math.max(0, Math.min(5, Number(hotel.rating) || 0)) * 20}%` }}
+            >★★★★★</span>
+          </span>
         </div>
         <p className="hotel-description">{hotel.description}</p>
         <div className="hotel-amenities">
