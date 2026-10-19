@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import Header from "./components/common/Header";
@@ -15,6 +15,7 @@ import Register from "./components/register/register.js";
 import AdminRoutes from './components/admin/AdminRoutes.js';
 import "./App.css";
 import "./responsive.css";
+import "./navigation-pages.css";
 
 function App() {
   const handleLogin = (userData) => {

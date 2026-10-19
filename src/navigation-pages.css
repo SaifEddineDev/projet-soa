@@ -1,0 +1,87 @@
+/* Shared visual system for every page reachable from the main navigation. */
+.main-content:has(.hotels-page), .main-content:has(.taxi-page), .main-content:has(.voyage-page), .main-content:has(.reservations-page), .main-content:has(.contact-page), .main-content:has(.profile-page) { width: 100%; max-width: 1440px; margin: 0 auto; padding: clamp(16px, 3vw, 38px); }
+.main-content .hotels-page, .main-content .taxi-page, .main-content .voyage-page, .main-content .reservations-page, .main-content .contact-page, .main-content .profile-page { width: 100%; max-width: none; margin: 0; padding: 0; color: #102a43; }
+.main-content .hotels-page > .hotels-header { position: relative; display: flex; min-height: 170px; align-items: flex-end; justify-content: space-between; gap: 20px; overflow: hidden; margin-bottom: 28px; padding: 42px clamp(24px, 5vw, 52px); border: 1px solid rgba(255,255,255,.12); border-radius: 24px; color: #fff; background: radial-gradient(circle at 85% 20%, rgba(91,196,207,.3), transparent 30%), linear-gradient(120deg,#082d43,#0b5270 68%,#147b8d); box-shadow: 0 18px 38px rgba(8,45,67,.14); }
+.main-content .hotels-page > .hotels-header::before { position: absolute; top: 24px; left: clamp(24px, 5vw, 52px); color: #ffda9f; content: 'SÉJOURS & HÉBERGEMENTS'; font-size: .72rem; font-weight: 800; letter-spacing: .14em; }
+.main-content .hotels-page > .hotels-header h1 { margin: 0; color: #fff; font-size: clamp(1.8rem,4vw,2.7rem); font-weight: 850; letter-spacing: -.035em; }
+.main-content .hotels-page > .hotels-header .toggle-map-btn { flex: 0 0 auto; border: 1px solid rgba(255,255,255,.35); border-radius: 11px; background: rgba(255,255,255,.13); font-weight: 750; backdrop-filter: blur(8px); }
+.main-content .hotels-page > .hotels-header .toggle-map-btn:hover { background: rgba(255,255,255,.24); }
+.main-content .hotels-container { align-items: flex-start; gap: 22px; }
+.main-content .filters-sidebar { top: 102px; border: 1px solid #e5edf2; border-radius: 18px; box-shadow: 0 10px 28px rgba(16,42,67,.07); }
+.main-content .hotels-list { padding: 0 0 18px; }
+.main-content .hotels-list > .hotels-header { margin: 4px 0 18px; }
+.main-content .hotels-list > .hotels-header h2 { color: #15344a; font-size: 1.25rem; font-weight: 800; }
+.main-content .hotels-grid { gap: 18px; }
+.main-content .hotel-card { border: 1px solid #e7eef2; border-radius: 17px; box-shadow: 0 8px 24px rgba(16,42,67,.07); }
+.main-content .hotel-card:hover { box-shadow: 0 16px 32px rgba(16,42,67,.13); }
+.main-content .taxi-hero, .main-content .voyage-hero, .main-content .contact-hero, .main-content .reservations-header { position: relative; isolation: isolate; overflow: hidden; margin: 0 0 30px; padding: clamp(34px,5vw,62px) clamp(22px,5vw,52px); border: 1px solid rgba(255,255,255,.12); border-radius: 24px; color: #fff; background: radial-gradient(circle at 86% 16%, rgba(94,190,205,.34), transparent 31%), linear-gradient(120deg,#082d43,#0b5270 72%,#147b8d); box-shadow: 0 18px 38px rgba(8,45,67,.14); text-align: left; }
+.main-content .taxi-hero::before, .main-content .voyage-hero::before, .main-content .contact-hero::before { display: block; margin-bottom: 12px; color: #ffda9f; font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.main-content .taxi-hero::before { content: 'DÉPLACEMENTS SIMPLES'; }
+.main-content .voyage-hero::before { content: 'VOYAGES ORGANISÉS'; }
+.main-content .contact-hero::before { content: 'NOUS SOMMES À VOTRE ÉCOUTE'; }
+.main-content .taxi-hero h1, .main-content .voyage-hero h1, .main-content .contact-hero h1, .main-content .reservations-header h1 { margin: 0 0 8px; color: #fff; font-size: clamp(1.9rem,4.2vw,3rem); font-weight: 850; letter-spacing: -.04em; line-height: 1.12; }
+.main-content .taxi-hero p, .main-content .voyage-hero p, .main-content .contact-hero p, .main-content .reservations-header p { margin: 0; color: rgba(255,255,255,.84); font-size: clamp(.98rem,1.6vw,1.12rem); line-height: 1.65; }
+.main-content .taxi-container { align-items: start; gap: 22px; }
+.main-content .booking-steps { padding: 10px 4px; }
+.main-content .booking-form-card, .main-content .taxi-selection-section { border: 1px solid #e5edf2; border-radius: 18px; box-shadow: 0 10px 28px rgba(16,42,67,.07); }
+.main-content .voyage-hero { background-image: linear-gradient(105deg,rgba(5,32,50,.91),rgba(7,65,88,.72)),url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1800&q=85'); background-position: center 52%; background-size: cover; }
+.main-content .voyage-hero .hero-content { width: min(100%, 960px); margin: 0; }
+.main-content .voyage-hero .hero-content h1 { margin-bottom: 9px; }
+.main-content .voyage-hero .hero-content p { margin-bottom: 20px; }
+.main-content .voyage-hero .search-bar { display: flex; width: min(100%, 650px); max-width: 650px; align-items: stretch; gap: 8px; margin: 0; padding: 7px; border-radius: 13px; background: #fff; box-shadow: 0 10px 24px rgba(0,0,0,.16); }
+.main-content .voyage-hero .search-bar input { min-width: 0; padding: 11px 13px; border: 0; border-radius: 8px; box-shadow: none; }
+.main-content .voyage-hero .search-bar .btn-search { display: inline-flex; flex: 0 0 auto; width: auto; min-height: 42px; align-items: center; justify-content: center; padding: 0 16px; border-radius: 9px; background: #0b5270; font-size: .88rem; }
+.main-content .voyage-container { padding: 0 2px; }
+.main-content .categories-section h2 { margin-bottom: 18px; color: #15344a; font-size: 1.45rem; font-weight: 850; text-align: left; }
+.main-content .category-card { border-color: #e5edf2; border-radius: 15px; box-shadow: 0 6px 18px rgba(16,42,67,.04); }
+.main-content .category-card.active { background: #f0f8fa; }
+.main-content .filters-panel, .main-content .contact-form-section, .main-content .faq-section, .main-content .reservations-page .filters-section, .main-content .profile-card { border: 1px solid #e5edf2; border-radius: 18px; box-shadow: 0 10px 28px rgba(16,42,67,.07); }
+.main-content .filters-panel { top: 102px; }
+.main-content .trips-section { padding: 0; }
+.main-content .trip-card { border: 1px solid #e7eef2; border-radius: 17px; box-shadow: 0 8px 24px rgba(16,42,67,.07); }
+.main-content .trip-card:hover { box-shadow: 0 16px 32px rgba(16,42,67,.13); }
+.main-content .reservations-header { display: flex; min-height: 176px; align-items: flex-end; justify-content: space-between; gap: 20px; background: radial-gradient(circle at 86% 16%,rgba(94,190,205,.3),transparent 31%),linear-gradient(120deg,#082d43,#0b5270 72%,#147b8d); }
+.main-content .reservations-header .header-content { position: relative; padding-top: 22px; }
+.main-content .reservations-header .header-content::before { position: absolute; top: 0; left: 0; color: #ffda9f; content: 'VOTRE ESPACE VOYAGEUR'; font-size: .72rem; font-weight: 800; letter-spacing: .14em; }
+.main-content .reservations-header h1 { margin-bottom: 8px; }
+.main-content .reservations-page .header-actions { flex-wrap: wrap; }
+.main-content .reservations-page .btn-export, .main-content .reservations-page .btn-print { min-height: 42px; border-radius: 10px; font-weight: 700; }
+.main-content .reservations-page .stat-card { border: 1px solid #e7eef2; border-radius: 16px; box-shadow: 0 8px 24px rgba(16,42,67,.06); }
+.main-content .contact-page { max-width: 1200px; margin: 0 auto; }
+.main-content .contact-info { gap: 15px; margin-bottom: 26px; }
+.main-content .info-card { border: 1px solid #e7eef2; border-radius: 16px; box-shadow: 0 8px 24px rgba(16,42,67,.055); }
+.main-content .info-icon { color: #0b6686; }
+.main-content .contact-form-section { margin-bottom: 28px; }
+.main-content .contact-form-section h2, .main-content .map-section h2, .main-content .faq-section h2 { color: #15344a; font-size: 1.45rem; font-weight: 850; }
+.main-content .contact-form .btn-submit { min-height: 46px; border-radius: 10px; background: #0b5270; font-weight: 750; }
+.main-content .contact-form .btn-submit:hover { background: #073e58; }
+.main-content .map-section { margin: 0 0 28px; }
+.main-content .map-container, .main-content .contact-page .map-container iframe { overflow: hidden; border-radius: 17px; }
+.main-content .faq-section { padding: clamp(22px,4vw,42px); }
+.main-content .faq-item { border-color: #e7eef2; }
+.main-content .profile-page { max-width: 900px; margin: 0 auto; }
+.main-content .profile-page > h1 { margin: 0 0 24px; padding: 30px; border-radius: 19px; color: #fff; background: linear-gradient(120deg,#082d43,#0b6686); font-size: clamp(1.8rem,4vw,2.4rem); text-align: left; }
+.main-content .profile-card { padding: clamp(20px,4vw,38px); }
+.main-content .profile-header .avatar { background: linear-gradient(145deg,#0b6686,#0b3956); }
+.main-content .profile-page .btn-save { border-radius: 9px; background: #0b6686; font-weight: 750; }
+.main-content .profile-page .btn-save:hover { background: #084b64; }
+@media (max-width: 900px) {
+ .main-content .taxi-container, .main-content .voyage-content { grid-template-columns: minmax(0,1fr); }
+ .main-content .reservations-header { align-items: flex-start; flex-direction: column; }
+ .main-content .filters-sidebar, .main-content .filters-panel { position: static; }
+}
+@media (max-width: 640px) {
+ .main-content:has(.hotels-page), .main-content:has(.taxi-page), .main-content:has(.voyage-page), .main-content:has(.reservations-page), .main-content:has(.contact-page), .main-content:has(.profile-page) { padding: 12px; }
+ .main-content .hotels-page > .hotels-header { align-items: flex-start; flex-direction: column; padding: 48px 20px 20px; }
+ .main-content .hotels-page > .hotels-header::before { top: 20px; left: 20px; }
+ .main-content .hotels-page > .hotels-header .toggle-map-btn { width: 100%; justify-content: center; }
+ .main-content .taxi-hero, .main-content .voyage-hero, .main-content .contact-hero, .main-content .reservations-header { margin-bottom: 20px; padding: 30px 20px; border-radius: 17px; }
+ .main-content .voyage-hero .search-bar { align-items: stretch; flex-direction: column; }
+ .main-content .voyage-hero .search-bar .btn-search { width: 100%; }
+ .main-content .reservations-page .header-actions { width: 100%; }
+ .main-content .reservations-page .header-actions button { flex: 1 1 auto; justify-content: center; }
+ .main-content .contact-form-section { padding: 22px 16px; }
+ .main-content .contact-info { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+ .main-content .info-card { padding: 18px 12px; }
+}
+@media (max-width: 400px) { .main-content .contact-info { grid-template-columns: minmax(0,1fr); } }
