@@ -16,6 +16,7 @@ import AdminRoutes from './components/admin/AdminRoutes.js';
 import "./App.css";
 import "./responsive.css";
 import "./navigation-pages.css";
+import "./site-polish.css";
 
 function App() {
   const handleLogin = (userData) => {
