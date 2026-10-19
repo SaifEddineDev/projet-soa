@@ -85,22 +85,22 @@ img { max-width: 100%; }
   flex-wrap: initial;
 }
 .main-content:not(:has(.admin-container)) .search-filters {
-  position: sticky;
-  top: 100px;
+  position: relative;
+  top: auto;
   width: 100%;
   max-width: none;
-  max-height: calc(100vh - 118px);
-  overflow-y: auto;
+  max-height: none;
+  overflow: visible;
   padding: 22px 18px;
   border: 1px solid #e3ebf1;
   border-radius: 18px;
   background: #fff;
   box-shadow: 0 10px 28px rgba(16,42,67,.08);
-  scrollbar-width: thin;
 }
 .main-content:not(:has(.admin-container)) .search-filters:hover { transform: none; }
 .main-content:not(:has(.admin-container)) .search-filters .filter-group { margin-bottom: 18px; padding-bottom: 16px; }
 .main-content:not(:has(.admin-container)) .search-filters .filter-group h4 { margin-bottom: 12px; font-size: .98rem; }
+.main-content:not(:has(.admin-container)) .search-filters .filter-group h4::before { width: 8px; height: 8px; flex: 0 0 8px; border-radius: 50%; background: #0b7891; content: ''; opacity: 1; }
 .main-content:not(:has(.admin-container)) .search-filters .stars-filter { gap: 5px; }
 .main-content:not(:has(.admin-container)) .search-filters .star-option {
   min-width: 0;
@@ -115,6 +115,7 @@ img { max-width: 100%; }
   border-color: #dbeafe;
   background: #f5f9ff;
 }
+.main-content:not(:has(.admin-container)) .search-filters .star-option:has(input:checked)::after { margin-left: auto; color: #0b7891; content: '✓'; font-size: .82rem; font-weight: 800; }
 .main-content:not(:has(.admin-container)) .search-filters .star-rating { flex: 0 0 auto; font-size: 16px; letter-spacing: 0; white-space: nowrap; }
 .main-content:not(:has(.admin-container)) .search-filters .star-option span:last-child { overflow: hidden; font-size: .78rem; text-overflow: ellipsis; white-space: nowrap; }
 .main-content:not(:has(.admin-container)) .search-filters .amenities-grid { gap: 8px; }
@@ -158,7 +159,7 @@ img { max-width: 100%; }
 .main-content:not(:has(.admin-container)) .sort-control select:focus-visible { outline: 3px solid rgba(11,88,115,.17); }
 .main-content:not(:has(.admin-container)) .sort-control option { padding: 10px; color: #173c53; background: #fff; }
 .main-content:not(:has(.admin-container)) .hotels-grid {
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 275px), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 275px), 1fr));
   align-items: stretch;
   gap: 18px;
   margin: 0;
@@ -166,7 +167,7 @@ img { max-width: 100%; }
 .main-content:not(:has(.admin-container)) .hotel-card {
   display: flex;
   min-width: 0;
-  height: 100%;
+  height: 510px;
   flex-direction: column;
   border: 1px solid #e5edf2;
   border-radius: 17px;
@@ -190,10 +191,10 @@ img { max-width: 100%; }
 .main-content:not(:has(.admin-container)) .hotels-map-container { min-width: 0; }
 @media (max-width: 900px) {
   .main-content:not(:has(.admin-container)) .hotels-container { grid-template-columns: minmax(0, 1fr); }
-  .main-content:not(:has(.admin-container)) .search-filters { position: relative; top: auto; max-height: none; }
+  .main-content:not(:has(.admin-container)) .search-filters { position: relative; top: auto; max-height: none; overflow: visible; }
   .main-content:not(:has(.admin-container)) .search-filters .stars-filter { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
   .main-content:not(:has(.admin-container)) .search-filters .amenities-grid { grid-template-columns: repeat(auto-fit, minmax(115px, 1fr)); }
-  .main-content:not(:has(.admin-container)) .hotels-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr)); }
+  .main-content:not(:has(.admin-container)) .hotels-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr)); }
 }
 @media (max-width: 560px) {
   .main-content:not(:has(.admin-container)):has(.hotels-page) { padding: 12px; }
@@ -202,5 +203,6 @@ img { max-width: 100%; }
   .main-content:not(:has(.admin-container)) .hotels-page > .hotels-header .toggle-map-btn { width: 100%; justify-content: center; }
   .main-content:not(:has(.admin-container)) .hotels-list > .hotels-header { align-items: flex-start; }
   .main-content:not(:has(.admin-container)) .sort-options select { max-width: 155px; }
-  .main-content:not(:has(.admin-container)) .hotels-grid { grid-template-columns: minmax(0, 1fr); }
+  .main-content:not(:has(.admin-container)) .hotels-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
+  .main-content:not(:has(.admin-container)) .hotel-card { height: 510px; }
 }
