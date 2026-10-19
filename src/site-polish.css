@@ -258,8 +258,17 @@ img { max-width: 100%; }
   background: linear-gradient(90deg, #0b5873, #1c9bad 60%, #f2b84b);
   content: '';
 }
-.main-content .login-header, .main-content .register-header { margin: 0 0 18px; text-align: left; }
-.main-content .login-header::before, .main-content .register-header::before {
+.main-content .login-container .login-header, .main-content .register-container .register-header {
+  margin: 0 0 14px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  background: transparent;
+  box-shadow: none;
+  text-align: left;
+}
+.main-content .login-container .login-header::before, .main-content .register-container .register-header::before {
   display: inline-flex;
   width: 36px;
   height: 36px;
@@ -275,8 +284,8 @@ img { max-width: 100%; }
 }
 .main-content .login-title, .main-content .register-title { margin: 0 0 7px; color: #10364d; font-size: clamp(1.8rem, 4vw, 2.25rem); font-weight: 850; letter-spacing: -.035em; }
 .main-content .login-subtitle, .main-content .register-subtitle { color: #6a7e8f; font-size: .98rem; line-height: 1.5; }
-.main-content .login-form, .main-content .register-form { gap: 12px; }
-.main-content .login-container .form-group, .main-content .register-container .form-group { min-width: 0; gap: 0; }
+.main-content .login-container .login-form, .main-content .register-container .register-form { gap: 10px; padding: 0; border: 0; background: transparent; }
+.main-content .login-container .form-group, .main-content .register-container .form-group { min-width: 0; gap: 0; margin: 0; padding: 0; }
 .main-content .login-container .form-label, .main-content .register-container .form-label { margin: 0 0 6px; color: #254257; font-size: .84rem; font-weight: 750; }
 .main-content .login-container .password-label-container, .main-content .register-container .password-label-container { align-items: center; gap: 10px; margin: 0 0 6px; }
 .main-content .login-container .password-label-container .form-label, .main-content .register-container .password-label-container .form-label { margin: 0; }
@@ -292,7 +301,7 @@ img { max-width: 100%; }
 }
 .main-content .login-container .form-input::placeholder, .main-content .register-container .form-input::placeholder { color: #98a8b5; }
 .main-content .login-container .form-input:focus, .main-content .register-container .form-input:focus { border-color: #0b7891; background: #fff; box-shadow: 0 0 0 4px rgba(11,120,145,.11); }
-.main-content .login-container .form-options { flex-wrap: wrap; gap: 8px 12px; color: #52697b; font-size: .82rem; }
+.main-content .login-container .form-options { flex-wrap: wrap; gap: 8px 12px; margin: 0; padding: 0; color: #52697b; font-size: .82rem; }
 .main-content .login-container .remember-me { min-width: 0; gap: 8px; }
 .main-content .login-container .forgot-password-btn { color: #0b6686; font-weight: 700; }
 .main-content .login-container .checkbox-input, .main-content .register-container .checkbox-input { flex: 0 0 auto; width: 18px; height: 18px; margin: 1px 0 0; accent-color: #0b6686; }
@@ -319,8 +328,8 @@ img { max-width: 100%; }
 .main-content .login-container .divider, .main-content .register-container .divider { margin: 0; color: #8494a1; font-size: .82rem; }
 .main-content .login-container .signup-button, .main-content .register-container .login-button-secondary { min-height: 40px; padding: 8px 12px; border: 1px solid #d9e5eb; border-radius: 9px; color: #0b5873; background: #fff; font-size: .86rem; font-weight: 750; }
 .main-content .login-container .signup-button:hover, .main-content .register-container .login-button-secondary:hover { border-color: #a9c9d4; background: #f2f9fa; }
-.main-content .login-footer, .main-content .register-footer { margin-top: 15px; padding-top: 12px; border-color: #e8eef2; }
-.main-content .login-container .footer-text, .main-content .register-container .footer-text { color: #7a8c99; font-size: .75rem; line-height: 1.6; }
+.main-content .login-container .login-footer, .main-content .register-container .register-footer { margin-top: 12px; padding-top: 10px; border-color: #e8eef2; }
+.main-content .login-container .footer-text, .main-content .register-container .footer-text { margin: 0; color: #7a8c99; font-size: .75rem; line-height: 1.5; }
 .main-content .login-container .footer-link, .main-content .register-container .footer-link { color: #0b6686; font-weight: 700; }
 .main-content .login-container .error-message, .main-content .register-container .error-message { align-items: flex-start; font-size: .8rem; }
 .main-content .login-container .submit-error, .main-content .register-container .submit-error { padding: 11px 13px; border: 1px solid #f5c8c5; border-radius: 10px; background: #fff4f3; }
