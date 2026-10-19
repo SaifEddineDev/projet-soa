@@ -58,9 +58,11 @@ img { max-width: 100%; }
 
 /* Hotel search: keep filters and results in one predictable, viewport-aware layout. */
 .main-content:not(:has(.admin-container)):has(.hotels-page) {
-  max-width: 1520px;
+  width: 100%;
+  max-width: 1440px;
   min-height: calc(100vh - 82px);
-  padding: clamp(16px, 2.4vw, 32px);
+  margin: 0 auto;
+  padding: clamp(24px, 3vw, 38px) clamp(18px, 4vw, 56px);
 }
 .main-content:not(:has(.admin-container)) .hotels-page > .hotels-header {
   min-height: 132px;
@@ -196,8 +198,11 @@ img { max-width: 100%; }
   .main-content:not(:has(.admin-container)) .search-filters .amenities-grid { grid-template-columns: repeat(auto-fit, minmax(115px, 1fr)); }
   .main-content:not(:has(.admin-container)) .hotels-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr)); }
 }
+@media (max-width: 1150px) {
+  .main-content:not(:has(.admin-container)):has(.hotels-page) { padding-right: 22px; padding-left: 22px; }
+}
 @media (max-width: 560px) {
-  .main-content:not(:has(.admin-container)):has(.hotels-page) { padding: 12px; }
+  .main-content:not(:has(.admin-container)):has(.hotels-page) { padding: 14px; }
   .main-content:not(:has(.admin-container)) .hotels-page > .hotels-header { min-height: 0; gap: 14px; padding: 48px 18px 18px; }
   .main-content:not(:has(.admin-container)) .hotels-page > .hotels-header::before { top: 18px; left: 18px; }
   .main-content:not(:has(.admin-container)) .hotels-page > .hotels-header .toggle-map-btn { width: 100%; justify-content: center; }
