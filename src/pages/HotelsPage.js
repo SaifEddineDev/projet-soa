@@ -173,8 +173,10 @@ const HotelsPage = () => {
             <div className="hotels-header">
               <h2>{filteredHotels.length} hôtels disponibles</h2>
               <div className="sort-options">
-                <span>↕️</span>
-                <select 
+                <label className="sort-control">
+                  <span className="sort-icon" aria-hidden="true">↕</span>
+                  <select
+                  aria-label="Trier les hôtels"
                   value={filters.sortBy}
                   onChange={(e) => handleFilterChange({...filters, sortBy: e.target.value})}
                 >
@@ -183,6 +185,7 @@ const HotelsPage = () => {
                   <option value="price-desc">Prix décroissant</option>
                   <option value="rating">Meilleures notes</option>
                 </select>
+                </label>
               </div>
             </div>
 

@@ -12,8 +12,7 @@ const HotelCard = ({ hotel }) => {
         </div>
         <div className="hotel-location">📍 {hotel.location}</div>
         <div className="hotel-rating">
-          <span className="rating-value">{hotel.rating}</span>
-          <div className="stars">★★★★★</div>
+          <span className="rating-value" aria-label={`Note : ${hotel.rating} sur 5`}>{hotel.rating}<small>/5</small></span>
         </div>
         <p className="hotel-description">{hotel.description}</p>
         <div className="hotel-amenities">
