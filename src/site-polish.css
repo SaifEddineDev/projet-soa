@@ -316,6 +316,9 @@ img { max-width: 100%; }
 .main-content .login-button:hover:not(:disabled), .main-content .register-button:hover:not(:disabled) { transform: translateY(-1px); background: linear-gradient(120deg, #08465f, #09657b); box-shadow: 0 10px 22px rgba(11,88,115,.23); }
 .main-content .login-container .show-password-btn, .main-content .register-container .show-password-btn {
   display: inline-grid;
+  position: absolute;
+  top: 50%;
+  right: 8px;
   width: 32px;
   height: 32px;
   flex: 0 0 32px;
@@ -326,8 +329,11 @@ img { max-width: 100%; }
   color: #0b6686;
   background: #f5fafb;
   line-height: 1;
+  transform: translateY(-50%);
   transition: color .18s ease, border-color .18s ease, background .18s ease;
 }
+.main-content .login-container .password-input-wrap, .main-content .register-container .password-input-wrap { position: relative; width: 100%; }
+.main-content .login-container .password-input-wrap .form-input, .main-content .register-container .password-input-wrap .form-input { width: 100%; padding-right: 50px; }
 .main-content .login-container .show-password-btn:hover, .main-content .register-container .show-password-btn:hover { border-color: #b9d3dc; color: #08465f; background: #eaf5f7; }
 .main-content .login-container .show-password-btn:focus-visible, .main-content .register-container .show-password-btn:focus-visible { outline: 3px solid rgba(11,120,145,.2); outline-offset: 2px; }
 .main-content .login-container .demo-login-container { margin-top: 0; padding: 11px; border: 1px solid #e5edf2; border-radius: 11px; background: #f8fbfc; }

@@ -217,6 +217,18 @@ const Register = ({ onRegister, onLogin }) => {
               <label htmlFor="password" className="form-label">
                 Mot de passe
               </label>
+            </div>
+            <div className="password-input-wrap">
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                className={`form-input ${errors.password ? 'error' : ''}`}
+                placeholder="Créez un mot de passe sécurisé"
+                autoComplete="new-password"
+              />
               <button
                 type="button"
                 className="show-password-btn"
@@ -232,16 +244,6 @@ const Register = ({ onRegister, onLogin }) => {
                 </svg>
               </button>
             </div>
-            <input
-              type={showPassword ? "text" : "password"}
-              id="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              className={`form-input ${errors.password ? 'error' : ''}`}
-              placeholder="Créez un mot de passe sécurisé"
-              autoComplete="new-password"
-            />
             {errors.password && (
               <div className="error-message">{errors.password}</div>
             )}
@@ -263,6 +265,18 @@ const Register = ({ onRegister, onLogin }) => {
               <label htmlFor="confirmPassword" className="form-label">
                 Confirmer le mot de passe
               </label>
+            </div>
+            <div className="password-input-wrap">
+              <input
+                type={showConfirmPassword ? "text" : "password"}
+                id="confirmPassword"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                className={`form-input ${errors.confirmPassword ? 'error' : ''}`}
+                placeholder="Retapez votre mot de passe"
+                autoComplete="new-password"
+              />
               <button
                 type="button"
                 className="show-password-btn"
@@ -278,16 +292,6 @@ const Register = ({ onRegister, onLogin }) => {
                 </svg>
               </button>
             </div>
-            <input
-              type={showConfirmPassword ? "text" : "password"}
-              id="confirmPassword"
-              name="confirmPassword"
-              value={formData.confirmPassword}
-              onChange={handleChange}
-              className={`form-input ${errors.confirmPassword ? 'error' : ''}`}
-              placeholder="Retapez votre mot de passe"
-              autoComplete="new-password"
-            />
             {errors.confirmPassword && (
               <div className="error-message">{errors.confirmPassword}</div>
             )}

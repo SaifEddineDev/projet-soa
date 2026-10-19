@@ -300,6 +300,18 @@ const Login = ({ onForgotPassword, onSignup }) => {
               <label htmlFor="password" className="form-label">
                 Mot de passe
               </label>
+            </div>
+            <div className="password-input-wrap">
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                className={`form-input ${errors.password ? 'error' : ''}`}
+                placeholder="Votre mot de passe"
+                autoComplete="current-password"
+              />
               <button
                 type="button"
                 className="show-password-btn"
@@ -315,16 +327,6 @@ const Login = ({ onForgotPassword, onSignup }) => {
                 </svg>
               </button>
             </div>
-            <input
-              type={showPassword ? "text" : "password"}
-              id="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              className={`form-input ${errors.password ? 'error' : ''}`}
-              placeholder="Votre mot de passe"
-              autoComplete="current-password"
-            />
             {errors.password && (
               <div className="error-message">{errors.password}</div>
             )}
