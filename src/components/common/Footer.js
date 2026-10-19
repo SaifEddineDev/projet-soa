@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
-          <h3>TravelHub</h3>
+          <h3>TravelHub++</h3>
           <p>Votre plateforme de réservation unifiée</p>
         </div>
         
@@ -22,12 +22,12 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Contact</h4>
           <p>contact@travelhub.com</p>
-          <p>+33 1 23 45 67 89</p>
+          <p>+216 29 058 322</p>
         </div>
       </div>
       
       <div className="footer-bottom">
-        <p>&copy; 2024 TravelHub. Tous droits réservés.</p>
+        <p>&copy; 2025 TravelHub. Tous droits réservés.</p>
       </div>
     </footer>
   );

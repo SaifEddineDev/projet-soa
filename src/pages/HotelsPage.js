@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './HotelsPage.css';
 import HotelCard from '../components/hotels/HotelCard';
 import SearchFilters from '../components/hotels/SearchFilters';
+import MapComponent from '../components/map/MapComponent';
 
 const HotelsPage = () => {
   const [hotels, setHotels] = useState([]);
@@ -13,6 +14,8 @@ const HotelsPage = () => {
     amenities: [],
     sortBy: 'recommended'
   });
+  const [selectedHotel, setSelectedHotel] = useState(null);
+  const [showMap, setShowMap] = useState(false);
 
   useEffect(() => {
     // Données fictives pour les hôtels
@@ -99,6 +102,20 @@ const HotelsPage = () => {
     setFilteredHotels(result);
   };
 
+  // Convert hotel data to map markers format
+  const hotelMarkers = hotels.map(hotel => ({
+    id: hotel.id,
+    position: {
+      lat: hotel.coordinates?.lat || 48.8566 + (Math.random() * 0.02 - 0.01), // Randomize slightly if no coords
+      lng: hotel.coordinates?.lng || 2.3522 + (Math.random() * 0.02 - 0.01)
+    },
+    title: hotel.name,
+    type: 'hotel',
+    price: `${hotel.price}€/nuit`,
+    rating: hotel.rating,
+    ...hotel
+  }));
+
   if (loading) {
     return (
       <div className="loading">
@@ -110,73 +127,79 @@ const HotelsPage = () => {
 
   return (
     <div className="hotels-page">
-      <div className="hotels-hero">
-        <h1>Trouvez l'hôtel parfait</h1>
-        <p>Des hébergements pour tous les budgets et toutes les envies</p>
+      <div className="hotels-header">
+        <h1>Hébergements disponibles</h1>
+        <button 
+          className="toggle-map-btn"
+          onClick={() => setShowMap(!showMap)}
+        >
+          {showMap ? 'Afficher la liste' : 'Afficher sur la carte'}
+        </button>
       </div>
-
+      
       <div className="hotels-container">
-        {/* Filtres */}
-        <div className="filters-sidebar">
-          <div className="filters-header">
-            <span>🔍</span>
-            <h3>Filtres</h3>
+        <SearchFilters 
+          filters={filters} 
+          onFilterChange={handleFilterChange}
+        />
+        
+        {showMap ? (
+          <div className="hotels-map-container">
+            <MapComponent 
+              height="600px"
+              markers={hotelMarkers}
+              onLocationSelect={setSelectedHotel}
+            />
+            {selectedHotel && (
+              <div className="selected-hotel-info">
+                <h3>{selectedHotel.title}</h3>
+                <p>Prix: {selectedHotel.price}</p>
+                <p>Note: {selectedHotel.rating}/5</p>
+                <button 
+                  className="view-hotel-btn"
+                  onClick={() => {
+                    // Scroll to the selected hotel in the list
+                    document.getElementById(`hotel-${selectedHotel.id}`)?.scrollIntoView();
+                    setSelectedHotel(null);
+                  }}
+                >
+                  Voir les détails
+                </button>
+              </div>
+            )}
           </div>
-          
-          <SearchFilters 
-            filters={filters}
-            onFilterChange={handleFilterChange}
-          />
-          
-          {/* Statistiques */}
-          <div className="stats-card">
-            <h4>Statistiques</h4>
-            <div className="stats-item">
-              <span>Hôtels trouvés:</span>
-              <span className="stats-value">{filteredHotels.length}</span>
+        ) : (
+          <div className="hotels-list">
+            <div className="hotels-header">
+              <h2>{filteredHotels.length} hôtels disponibles</h2>
+              <div className="sort-options">
+                <span>↕️</span>
+                <select 
+                  value={filters.sortBy}
+                  onChange={(e) => handleFilterChange({...filters, sortBy: e.target.value})}
+                >
+                  <option value="recommended">Recommandés</option>
+                  <option value="price-asc">Prix croissant</option>
+                  <option value="price-desc">Prix décroissant</option>
+                  <option value="rating">Meilleures notes</option>
+                </select>
+              </div>
             </div>
-            <div className="stats-item">
-              <span>Prix moyen:</span>
-              <span className="stats-value">
-                {filteredHotels.length > 0 
-                  ? Math.round(filteredHotels.reduce((sum, hotel) => sum + hotel.price, 0) / filteredHotels.length)
-                  : 0}€
-              </span>
-            </div>
-          </div>
-        </div>
 
-        {/* Liste des hôtels */}
-        <div className="hotels-list">
-          <div className="hotels-header">
-            <h2>{filteredHotels.length} hôtels disponibles</h2>
-            <div className="sort-options">
-              <span>↕️</span>
-              <select 
-                value={filters.sortBy}
-                onChange={(e) => handleFilterChange({...filters, sortBy: e.target.value})}
-              >
-                <option value="recommended">Recommandés</option>
-                <option value="price-asc">Prix croissant</option>
-                <option value="price-desc">Prix décroissant</option>
-                <option value="rating">Meilleures notes</option>
-              </select>
-            </div>
+            {filteredHotels.length === 0 ? (
+              <div className="no-results">
+                <h3>Aucun hôtel ne correspond à vos critères</h3>
+                <p>Essayez de modifier vos filtres pour voir plus de résultats</p>
+              </div>
+            ) : (
+              <div className="hotels-grid">
+                {filteredHotels.map(hotel => (
+                  <HotelCard key={hotel.id} hotel={hotel} />
+                ))}
+              </div>
+            )}
           </div>
-
-          {filteredHotels.length === 0 ? (
-            <div className="no-results">
-              <h3>Aucun hôtel ne correspond à vos critères</h3>
-              <p>Essayez de modifier vos filtres pour voir plus de résultats</p>
-            </div>
-          ) : (
-            <div className="hotels-grid">
-              {filteredHotels.map(hotel => (
-                <HotelCard key={hotel.id} hotel={hotel} />
-              ))}
-            </div>
-          )}
-        </div>
+        )}
       </div>
     </div>
   );

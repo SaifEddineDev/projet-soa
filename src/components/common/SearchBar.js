@@ -66,7 +66,7 @@ const SearchBar = ({ searchParams, setSearchParams }) => {
             voyageurs: parseInt(e.target.value)
           })}
         >
-          {[1, 2, 3, 4, 5, 6].map(num => (
+          {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
             <option key={num} value={num}>{num} {num === 1 ? 'personne' : 'personnes'}</option>
           ))}
         </select>

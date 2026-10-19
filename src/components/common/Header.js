@@ -41,10 +41,16 @@ const Header = () => {
         <div className="auth-section">
           {user ? (
             <div className="user-info">
-              <span>Bonjour, {user.name}</span>
-              <button onClick={handleLogout} className="btn-logout">
-                Déconnexion
-              </button>
+              <div className="user-avatar">
+                <span className="avatar-circle">
+                  {user.firstName ? user.firstName.charAt(0).toUpperCase() : user.email.charAt(0).toUpperCase()}
+                </span>
+              </div>
+              <div className="user-details">
+                <span className="user-greeting">Bonjour,</span>
+                <span className="user-name">{user.firstName || user.email.split('@')[0]}</span>
+              </div>
+              <button onClick={handleLogout} className='logout-btn'>Déconnexion</button>
             </div>
           ) : (
             <div className="auth-buttons">
@@ -59,3 +65,4 @@ const Header = () => {
 };
 
 export default Header;
+

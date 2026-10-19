@@ -50,6 +50,7 @@
   margin: 0;
   font-weight: 800;
   background: linear-gradient(to right, #000d48, rgb(73, 0, 136));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -0.5px;
@@ -155,6 +156,7 @@
 
 .btn-register:hover {
   background: #f8f9fa;
+  color: #667eea;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -163,11 +165,50 @@
 .user-info {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   background: rgba(255, 255, 255, 0.1);
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 8px;
   backdrop-filter: blur(10px);
+}
+
+.user-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.user-greeting {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+}
+
+.user-name {
+  font-size: 1rem;
+  color: white;
+  font-weight: 600;
+  text-transform: capitalize;
 }
 
 .user-info span {
@@ -372,7 +413,38 @@
   
   .logo h1 {
     background: linear-gradient(to right, #e2e8f0, #cbd5e0);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+}
+
+/* Version simple du bouton de déconnexion */
+.logout-btn {
+  background: #ef4444;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.logout-btn:active {
+  transform: translateY(0);
+}
+
+.logout-btn .icon {
+  font-size: 1rem;
 }

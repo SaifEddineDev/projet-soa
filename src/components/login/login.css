@@ -1,0 +1,559 @@
+/* Variables CSS */
+:root {
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --secondary-color: #f3f4f6;
+  --text-color: #1f2937;
+  --text-light: #6b7280;
+  --error-color: #ef4444;
+  --success-color: #10b981;
+  --border-color: #d1d5db;
+  --border-radius: 8px;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Reset et styles de base */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+.login-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 1440px;
+  padding: 40px;
+  transition: var(--transition);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.login-title {
+  font-size: 45px;
+  font-weight: 900;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.login-subtitle {
+  font-size: 16px;
+  color: var(--text-light);
+  margin: 0;
+}
+
+/* Formulaire */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.password-label-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.show-password-btn {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.show-password-btn:hover {
+  background-color: rgba(79, 70, 229, 0.1);
+}
+
+.form-input {
+  padding: 14px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  transition: var(--transition);
+  background-color: white;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.form-input.error {
+  border-color: var(--error-color);
+}
+
+.form-input.error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 13px;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.error-message::before {
+  content: "⚠";
+  font-size: 12px;
+}
+
+.submit-error {
+  background-color: rgba(239, 68, 68, 0.1);
+  padding: 12px 16px;
+  border-radius: var(--border-radius);
+  margin-bottom: 8px;
+}
+
+.submit-error::before {
+  content: "";
+}
+
+/* Options du formulaire */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary-color);
+  cursor: pointer;
+}
+
+.checkbox-label {
+  color: var(--text-color);
+  cursor: pointer;
+  user-select: none;
+}
+
+.forgot-password-btn {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.forgot-password-btn:hover {
+  text-decoration: underline;
+  background-color: rgba(79, 70, 229, 0.1);
+}
+
+/* Boutons */
+.login-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.login-button:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.login-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.demo-login-container {
+  margin-top: 8px;
+}
+
+.demo-login-button {
+  width: 100%;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.demo-login-button:hover {
+  background-color: rgba(79, 70, 229, 0.05);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--text-light);
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.divider span {
+  padding: 0 16px;
+}
+
+.signup-button {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.signup-button:hover {
+  border-color: var(--primary-color);
+  background-color: rgba(79, 70, 229, 0.05);
+}
+
+/* Footer */
+.login-footer {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.footer-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 30px 24px;
+  }
+  
+  .login-title {
+    font-size: 24px;
+  }
+  
+  .form-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .forgot-password-btn {
+    align-self: flex-start;
+    padding-left: 0;
+  }
+}
+/* Ajoutez ces styles à la fin de votre fichier login.css existant */
+
+/* Panel d'information admin */
+.admin-info-panel {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.admin-info-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.admin-icon {
+  font-size: 1.2rem;
+}
+
+.admin-info-header span {
+  flex: 1;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.admin-toggle {
+  background: rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #3b82f6;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admin-toggle:hover {
+  background: rgba(59, 130, 246, 0.3);
+}
+
+/* Liste des comptes admin */
+.admin-accounts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.admin-account {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid rgba(203, 213, 225, 0.3);
+}
+
+.account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.account-role {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.use-btn {
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.use-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.account-credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.credential {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.credential .label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #64748b;
+  min-width: 70px;
+}
+
+.credential .value {
+  flex: 1;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.85rem;
+  color: #1e293b;
+  word-break: break-all;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+}
+
+/* Boutons démo */
+.demo-login-container {
+  margin-top: 20px;
+}
+
+.demo-title {
+  text-align: center;
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.demo-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.demo-btn {
+  padding: 12px 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.demo-btn:hover {
+  transform: translateY(-2px);
+}
+
+.demo-btn.admin {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+  color: #3b82f6;
+}
+
+.demo-btn.admin:hover {
+  background: rgba(59, 130, 246, 0.2);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.demo-btn.manager {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #10b981;
+}
+
+.demo-btn.manager:hover {
+  background: rgba(16, 185, 129, 0.2);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.demo-btn.user {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.3);
+  color: #8b5cf6;
+}
+
+.demo-btn.user:hover {
+  background: rgba(139, 92, 246, 0.2);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .demo-buttons {
+    grid-template-columns: 1fr;
+  }
+  
+  .admin-accounts-list {
+    gap: 10px;
+  }
+  
+  .admin-info-panel {
+    padding: 12px;
+  }
+}
