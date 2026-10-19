@@ -53,3 +53,5 @@
  .user-details { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .header *, .header *::before, .header *::after { transition-duration: .01ms !important; } }
+/* White logo tile for consistent contrast against the navigation */
+.brand-logo { padding: 4px; background-color: #fff; object-fit: contain; }

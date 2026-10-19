@@ -1,11 +1,14 @@
 {
-  "short_name": "TravelHub",
-  "name": "TravelHub — Réservez votre prochain voyage",
-  "icons": [
-    { "src": "favion.png", "type": "image/png" }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#082f49",
-  "background_color": "#ffffff"
+    "short_name":  "TravelHub",
+    "name":  "TravelHub â€” RÃ©servez votre prochain voyage",
+    "icons":  [
+                  {
+                      "src":  "favion.png",
+                      "type":  "image/png"
+                  }
+              ],
+    "start_url":  ".",
+    "display":  "standalone",
+    "theme_color":  "#ffffff",
+    "background_color":  "#ffffff"
 }
