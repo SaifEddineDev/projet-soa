@@ -32,7 +32,7 @@ const Hotels = () => {
       rooms: 25, 
       price: 320, 
       status: 'inactif',
-      image: 'https://images.unsplash.com/photo-1564501049418-3c27787d01e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+      image: process.env.PUBLIC_URL + '/chamonix-hotel.jpg'
     },
   ]);
 

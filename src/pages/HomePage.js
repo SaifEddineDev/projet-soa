@@ -15,7 +15,7 @@ const services = [
 const stays = [
   { name: 'Escapade parisienne', place: 'Paris, France', price: '189 €', image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85', tag: 'Séjour urbain' },
   { name: 'L’air de la Méditerranée', place: 'Nice, Côte d’Azur', price: '187 €', image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=900&q=85', tag: 'Bord de mer' },
-  { name: 'Parenthèse dans les Alpes', place: 'Chamonix, France', price: '245 €', image: 'https://images.unsplash.com/photo-1564501049418-3c27787d01e8?auto=format&fit=crop&w=900&q=85', tag: 'Nature & détente' }
+  { name: 'Parenthèse dans les Alpes', place: 'Chamonix, France', price: '245 €', image: process.env.PUBLIC_URL + '/chamonix-hotel.jpg', tag: 'Nature & détente' }
 ];
 
 const HomePage = () => {
