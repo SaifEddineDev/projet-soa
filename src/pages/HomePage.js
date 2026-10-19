@@ -1,279 +1,60 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import SearchBar from '../components/common/SearchBar';
-import ServiceGrid from '../components/services/ServiceGrid'; 
+import ServiceGrid from '../components/services/ServiceGrid';
 import MapComponent from '../components/map/MapComponent';
 import './HomePage.css';
 
-const HomePage = () => {
-  const [searchParams, setSearchParams] = useState({
-    destination: '',
-    dateDebut: '',
-    dateFin: '',
-    voyageurs: 1,
-    serviceType: 'all'
-  });
+const services = [
+  { id: 1, title: 'Hôtels & séjours', description: 'Trouvez un hébergement adapté à vos envies et à votre budget.', icon: '🏨', link: '/hotels' },
+  { id: 2, title: 'Taxi & transport', description: 'Organisez vos déplacements simplement, de la prise en charge à l’arrivée.', icon: '🚕', link: '/taxis' },
+  { id: 3, title: 'Voyages organisés', description: 'Partez l’esprit tranquille avec des offres pensées pour vous.', icon: '✈️', link: '/voyages' },
+  { id: 4, title: 'Conseils de voyage', description: 'Notre équipe vous accompagne dans la préparation de votre séjour.', icon: '🧭', link: '/contact' }
+];
 
-  const services = [
-    {
-      id: 1,
-      title: 'Réservation Hôtel',
-      description: 'Trouvez les meilleurs hôtels au meilleur prix',
-      icon: '🏨',
-      link: '/hotels'
-    },
-    {
-      id: 2,
-      title: 'Taxi & Transport',
-      description: 'Réservez un taxi en quelques clics',
-      icon: '🚕',
-      link: '/taxis'
-    },
-    {
-      id: 3,
-      title: 'Voyages Organisés',
-      description: 'Découvrez nos offres de voyages',
-      icon: '✈️',
-      link: '/voyages'
-    },
-    {
-      id: 4,
-      title: 'Conseils de voyage',
-      description: 'Contactez notre équipe pour préparer votre séjour',
-      icon: '🧭',
-      link: '/contact'
-    }
-  ];
+const stays = [
+  { name: 'Escapade parisienne', place: 'Paris, France', price: '189 €', image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85', tag: 'Séjour urbain' },
+  { name: 'L’air de la Méditerranée', place: 'Nice, Côte d’Azur', price: '187 €', image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=900&q=85', tag: 'Bord de mer' },
+  { name: 'Parenthèse dans les Alpes', place: 'Chamonix, France', price: '245 €', image: 'https://images.unsplash.com/photo-1564501049418-3c27787d01e8?auto=format&fit=crop&w=900&q=85', tag: 'Nature & détente' }
+];
+
+const HomePage = () => {
+  const [searchParams, setSearchParams] = useState({ destination: '', dateDebut: '', dateFin: '', voyageurs: 1, serviceType: 'all' });
 
   return (
     <div className="home-page">
-      {/* Hero Section */}
-      <section className="hero-section">
+      <section className="hero-section" aria-labelledby="hero-title">
         <div className="hero-content">
-          <h2>Voyagez en toute sérénité</h2>
-          <p>Réservez vos hôtels, taxis et voyages en un seul endroit</p>
-          
-          <SearchBar 
-            searchParams={searchParams}
-            setSearchParams={setSearchParams}
-          />
+          <span className="hero-eyebrow"><span aria-hidden="true">✦</span> Vos prochaines vacances commencent ici</span>
+          <h2 id="hero-title">Le voyage qui vous ressemble, <span>en quelques clics.</span></h2>
+          <p>Hébergement, transport et idées d’évasion : préparez tout votre séjour au même endroit.</p>
+          <div className="hero-actions"><Link to="/voyages" className="hero-primary-link">Découvrir les voyages <span aria-hidden="true">→</span></Link><Link to="/hotels" className="hero-secondary-link">Trouver un hôtel</Link></div>
+          <div className="hero-trust"><span aria-hidden="true">✓</span> Une réservation simple <span aria-hidden="true">✓</span> Des services réunis <span aria-hidden="true">✓</span> Un accompagnement humain</div>
         </div>
+        <div className="hero-search-wrap"><div className="hero-search-heading"><span>Planifiez votre escapade</span><small>Où souhaitez-vous aller ?</small></div><SearchBar searchParams={searchParams} setSearchParams={setSearchParams} /></div>
       </section>
 
-      {/* Services Section */}
-      <section className="services-section">
-        <h3>Nos Services</h3>
+      <section className="services-section home-section" aria-labelledby="services-title">
+        <div className="section-heading"><span className="section-kicker">Tout pour partir serein</span><h3 id="services-title">Votre voyage, de A à Z</h3><p>Choisissez le service qu’il vous faut et construisez un séjour à votre rythme.</p></div>
         <ServiceGrid services={services} />
       </section>
 
-      {/* Map Preview */}
-      <section className="map-section">
-        <h3>Trouvez votre destination</h3>
-        <div className="map-container">
-          <MapComponent 
-            height="400px"
-            initialLocation={{ lat: 48.8566, lng: 2.3522 }} // Paris
-            showMarkers={false}
-            hideControls={true}
-            minimalMode={true}
-          />
-        </div>
+      <section className="home-stays-section home-section" aria-labelledby="stays-title">
+        <div className="section-heading section-heading-row"><div><span className="section-kicker">Une envie d’ailleurs ?</span><h3 id="stays-title">Des séjours à découvrir</h3><p>Quelques inspirations pour imaginer votre prochaine escapade.</p></div><Link to="/hotels" className="section-more-link">Tous les hôtels <span aria-hidden="true">→</span></Link></div>
+        <div className="home-stays-grid">{stays.map((stay) => (
+          <article className="home-stay-card" key={stay.name}>
+            <Link to="/hotels" className="home-stay-image-link" aria-label={`Découvrir les hôtels à ${stay.place}`}><img src={stay.image} alt={`Hébergement inspirant à ${stay.place}`} loading="lazy" /><span className="home-stay-tag">{stay.tag}</span></Link>
+            <div className="home-stay-content"><span className="home-stay-place">{stay.place}</span><h4>{stay.name}</h4><div className="home-stay-bottom"><span>Dès <strong>{stay.price}</strong> <small>/ nuit</small></span><Link to="/hotels" aria-label={`Voir les hôtels à ${stay.place}`}>Explorer <span aria-hidden="true">→</span></Link></div></div>
+          </article>
+        ))}</div>
       </section>
 
-      {/* Recommendations */}
-      <section className="recommendations-section">
-  <div className="section-header">
-    <h3>Recommandations du moment</h3>
-    <p className="section-subtitle">Découvrez nos établissements les plus prisés</p>
-  </div>
-  
-  <div className="recommendations-grid">
-    {/* Carte 1 */}
-    <div className="recommendation-card">
-      <div className="card-badge">Populaire</div>
-      <div className="card-image">
-        <img 
-          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-          alt="Hôtel Luxe Paris" 
-        />
-        <button className="wishlist-btn">
-          <span className="heart-icon">♥</span>
-        </button>
-      </div>
-      <div className="card-content">
-        <div className="card-header">
-          <h4 className="hotel-name">Hôtel Plaza Paris</h4>
-          <div className="location">
-            <span className="location-icon">📍</span>
-            <span className="location-text">Paris, France</span>
-          </div>
-        </div>
-        
-        <div className="rating-container">
-          <div className="stars">
-            {'★'.repeat(5)}
-            <span className="rating-text">5.0 (124 avis)</span>
-          </div>
-          <div className="rating-badge">Excellent</div>
-        </div>
-        
-        <div className="amenities">
-          <span className="amenity">🛏️ 2 lits</span>
-              <span className="amenity">🚿 Salle de bain</span>
-              <span className="amenity">📶 WiFi gratuit</span>
-            </div>
-
-            <div className="price-section">
-              <div className="price-info">
-                <span className="price">À partir de <strong>189€</strong></span>
-                <span className="price-note">par nuit</span>
-              </div>
-                <button className="book-btn">Voir disponibilités</button>
-              </div>
-            </div>
-          </div>
-    
-          {/* Carte 2 */}
-          <div className="recommendation-card">
-            <div className="card-badge discount">-15%</div>
-            <div className="card-image">
-              <img 
-                src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Resort Méditerranée" 
-              />
-              <button className="wishlist-btn">
-                <span className="heart-icon">♥</span>
-              </button>
-            </div>
-            <div className="card-content">
-              <div className="card-header">
-                <h4 className="hotel-name">Méditerranée Resort</h4>
-                <div className="location">
-                  <span className="location-icon">📍</span>
-                  <span className="location-text">Nice, Côte d'Azur</span>
-                </div>
-              </div>
-
-              <div className="rating-container">
-                <div className="stars">
-                  {'★'.repeat(4)}
-                  <span className="half-star">★</span>
-                  <span className="rating-text">4.5 (89 avis)</span>
-                </div>
-                <div className="rating-badge">Très bien</div>
-              </div>
-
-              <div className="amenities">
-                <span className="amenity">🏊 Piscine</span>
-                <span className="amenity">🍽️ Restaurant</span>
-                <span className="amenity">🏖️ Plage privée</span>
-              </div>
-
-              <div className="price-section">
-                <div className="price-info">
-                  <div className="price-original">220€</div>
-                  <span className="price">À partir de <strong>187€</strong></span>
-                  <span className="price-note">par nuit</span>
-                </div>
-                <button className="book-btn">Profiter de l'offre</button>
-              </div>
-            </div>
-          </div>
-
-          {/* Carte 3 */}
-          <div className="recommendation-card">
-            <div className="card-badge eco">Éco-friendly</div>
-            <div className="card-image">
-              <img 
-                src="https://images.unsplash.com/photo-1564501049418-3c27787d01e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Chalet Montagne" 
-              />
-              <button className="wishlist-btn">
-                <span className="heart-icon">♥</span>
-              </button>
-            </div>
-            <div className="card-content">
-              <div className="card-header">
-                <h4 className="hotel-name">Chalet Alpin</h4>
-                <div className="location">
-                  <span className="location-icon">📍</span>
-                  <span className="location-text">Chamonix, Alpes</span>
-                </div>
-              </div>
-
-              <div className="rating-container">
-                <div className="stars">
-                  {'★'.repeat(5)}
-                  <span className="rating-text">5.0 (67 avis)</span>
-                </div>
-                <div className="rating-badge">Exceptionnel</div>
-              </div>
-
-              <div className="amenities">
-                <span className="amenity">🔥 Cheminée</span>
-                <span className="amenity">🚗 Parking</span>
-                <span className="amenity">🌿 Éco-responsable</span>
-              </div>
-
-              <div className="price-section">
-                <div className="price-info">
-                  <span className="price">À partir de <strong>245€</strong></span>
-                  <span className="price-note">par nuit</span>
-                </div>
-                <button className="book-btn">Réserver</button>
-              </div>
-            </div>
-          </div>
-
-          {/* Carte 4 */}
-          <div className="recommendation-card">
-            <div className="card-badge">Nouveau</div>
-            <div className="card-image">
-              <img 
-                src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Hôtel Design" 
-              />
-              <button className="wishlist-btn">
-                <span className="heart-icon">♥</span>
-              </button>
-            </div>
-            <div className="card-content">
-              <div className="card-header">
-                <h4 className="hotel-name">Urban Design Hotel</h4>
-                <div className="location">
-                  <span className="location-icon">📍</span>
-                  <span className="location-text">Lyon, France</span>
-                </div>
-              </div>
-
-              <div className="rating-container">
-                <div className="stars">
-                  {'★'.repeat(4)}
-                  <span className="rating-text">4.2 (45 avis)</span>
-                </div>
-                <div className="rating-badge">Superbe</div>
-              </div>
-
-              <div className="amenities">
-                <span className="amenity">🏋️ Salle de sport</span>
-                <span className="amenity">☕ Petit-déjeuner</span>
-                <span className="amenity">💼 Centre d'affaires</span>
-              </div>
-
-              <div className="price-section">
-                <div className="price-info">
-                  <span className="price">À partir de <strong>165€</strong></span>
-                  <span className="price-note">par nuit</span>
-                </div>
-                <button className="book-btn">Découvrir</button>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <div className="section-footer">
-          <button className="view-all-btn">Voir toutes les recommandations →</button>
-        </div>
+      <section className="home-map-section home-section" aria-labelledby="map-title">
+        <div className="home-map-copy"><span className="section-kicker">À vous de choisir</span><h3 id="map-title">Le monde est à portée de clic</h3><p>Repérez votre prochaine destination et laissez-vous inspirer. De la ville animée aux paysages grandioses, votre prochaine histoire commence ici.</p><Link to="/voyages" className="home-map-link">Explorer nos voyages <span aria-hidden="true">→</span></Link></div>
+        <div className="home-map-container"><MapComponent height="360px" initialLocation={{ lat: 48.8566, lng: 2.3522 }} showMarkers={false} hideControls={true} minimalMode={true} /></div>
       </section>
+
+      <section className="home-last-call"><div><span className="section-kicker">Prêt à vous évader ?</span><h3>Faisons de votre prochain voyage un beau souvenir.</h3><p>Parcourez nos offres et commencez à préparer votre séjour dès aujourd’hui.</p></div><Link to="/voyages" className="home-last-call-link">Je prépare mon voyage <span aria-hidden="true">→</span></Link></section>
     </div>
   );
 };
