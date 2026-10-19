@@ -220,9 +220,16 @@ const Register = ({ onRegister, onLogin }) => {
               <button
                 type="button"
                 className="show-password-btn"
+                aria-label={showPassword ? 'Masquer le mot de passe' : 'Afficher le mot de passe'}
+                aria-pressed={showPassword}
+                title={showPassword ? 'Masquer le mot de passe' : 'Afficher le mot de passe'}
                 onClick={() => setShowPassword(!showPassword)}
               >
-                {showPassword ? 'Masquer' : 'Afficher'}
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z" />
+                  <circle cx="12" cy="12" r="3" />
+                  {showPassword && <path d="m4 4 16 16" />}
+                </svg>
               </button>
             </div>
             <input
@@ -259,9 +266,16 @@ const Register = ({ onRegister, onLogin }) => {
               <button
                 type="button"
                 className="show-password-btn"
+                aria-label={showConfirmPassword ? 'Masquer la confirmation du mot de passe' : 'Afficher la confirmation du mot de passe'}
+                aria-pressed={showConfirmPassword}
+                title={showConfirmPassword ? 'Masquer le mot de passe' : 'Afficher le mot de passe'}
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
               >
-                {showConfirmPassword ? 'Masquer' : 'Afficher'}
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z" />
+                  <circle cx="12" cy="12" r="3" />
+                  {showConfirmPassword && <path d="m4 4 16 16" />}
+                </svg>
               </button>
             </div>
             <input
