@@ -201,3 +201,29 @@
   max-width: 90%;
   text-align: center;
 }
+
+.map-unavailable {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  padding: 24px;
+  background:
+    linear-gradient(30deg, transparent 48%, rgba(99, 102, 241, .08) 49%, rgba(99, 102, 241, .08) 51%, transparent 52%),
+    linear-gradient(150deg, #eef2ff, #dbeafe 55%, #f8fafc);
+  background-size: 46px 46px, auto;
+}
+
+.map-unavailable-card {
+  max-width: 360px;
+  padding: 24px 28px;
+  border: 1px solid rgba(99, 102, 241, .14);
+  border-radius: 18px;
+  background: rgba(255,255,255,.94);
+  box-shadow: 0 14px 36px rgba(49, 46, 129, .12);
+  text-align: center;
+}
+
+.map-unavailable-icon { font-size: 2rem; }
+.map-unavailable-card h3 { margin: 8px 0; color: #1e293b; }
+.map-unavailable-card p { margin: 0; color: #64748b; }
+.map-unavailable-city { display: inline-block; margin-top: 12px; color: #4f46e5; font-weight: 700; }

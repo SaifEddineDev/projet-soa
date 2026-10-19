@@ -96,6 +96,7 @@ const MapComponent = ({
 
   // Load user location on component mount
   useEffect(() => {
+    if (!process.env.REACT_APP_GOOGLE_MAPS_API_KEY) return undefined;
     getUserLocation();
     
     // Cleanup function
@@ -225,6 +226,19 @@ const MapComponent = ({
     mapRef.current = null;
     setMap(null);
   }, []);
+
+  if (!process.env.REACT_APP_GOOGLE_MAPS_API_KEY) {
+    return (
+      <div className="map-container map-unavailable" style={{ height }} role="img" aria-label="Carte indisponible">
+        <div className="map-unavailable-card">
+          <span className="map-unavailable-icon" aria-hidden="true">📍</span>
+          <h3>Explorez vos destinations</h3>
+          <p>La carte interactive sera bientôt disponible.</p>
+          <span className="map-unavailable-city">Paris · France</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="map-container" style={{ height }}>

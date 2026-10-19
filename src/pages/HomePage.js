@@ -37,10 +37,10 @@ const HomePage = () => {
     },
     {
       id: 4,
-      title: 'Guides Locaux',
-      description: 'Explorez avec des guides experts',
+      title: 'Conseils de voyage',
+      description: 'Contactez notre équipe pour préparer votre séjour',
       icon: '🧭',
-      link: '/guides'
+      link: '/contact'
     }
   ];
 

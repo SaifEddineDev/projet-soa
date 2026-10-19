@@ -420,7 +420,7 @@
 }
 
 /* Version simple du bouton de déconnexion */
-.logout-btn {
+.header .logout-btn {
   background: #ef4444;
   color: white;
   padding: 10px 20px;
@@ -435,16 +435,66 @@
   font-size: 0.9rem;
 }
 
-.logout-btn:hover {
+.header .logout-btn:hover {
   background: #dc2626;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
 }
 
-.logout-btn:active {
+.header .logout-btn:active {
   transform: translateY(0);
 }
 
-.logout-btn .icon {
+.header .logout-btn .icon {
   font-size: 1rem;
+}
+
+/* Final responsive layout overrides */
+.header .container {
+  width: min(100%, 1440px);
+  min-height: 78px;
+  padding: 10px 24px;
+  gap: 16px;
+}
+
+.logo a { margin-left: 0; color: #fff; gap: 10px; }
+.logo-image { width: 52px; height: 52px; margin-left: 0; flex: 0 0 52px; }
+.logo h1 { color: #fff; background: none; -webkit-text-fill-color: #fff; font-size: clamp(1.1rem, 2vw, 1.5rem); }
+.nav-menu { flex: 1 1 auto; min-width: 0; margin: 0 8px; }
+.nav-menu ul { justify-content: center; flex-wrap: wrap; gap: 4px; margin: 0; }
+.nav-menu a { padding: 8px 9px; color: #fff; font-size: .9rem; text-align: center; }
+.nav-menu a:hover, .nav-menu a.active { background: rgba(255,255,255,.18); }
+.btn-login { border-color: rgba(255,255,255,.85); color: #fff; }
+.btn-register { border-color: #fff; background: #fff; color: #3e3b91; }
+.header .logout-btn { color: #fff; }
+.mobile-menu-toggle { display: none; }
+
+@media (max-width: 1100px) {
+  .header .container { flex-direction: row; flex-wrap: wrap; gap: 12px; }
+  .mobile-menu-toggle { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-left: auto; border: 1px solid rgba(255,255,255,.75); border-radius: 8px; background: transparent; color: #fff; font-size: 1.35rem; cursor: pointer; }
+  .nav-menu { display: none; order: 3; flex: 1 0 100%; }
+  .nav-menu.is-open { display: block; }
+  .nav-menu ul { align-items: stretch; flex-direction: column; gap: 2px; padding: 8px 0 12px; }
+  .nav-menu a { text-align: left; }
+  .auth-section { order: 2; }
+  .logo a { flex-direction: row; margin-left: 0; }
+  .logo-image { width: 46px; height: 46px; flex-basis: 46px; }
+}
+
+@media (max-width: 600px) {
+  .header .container { min-height: 68px; padding: 8px 14px; gap: 8px; }
+  .logo h1 { font-size: 1.08rem; }
+  .logo-image { width: 42px; height: 42px; flex-basis: 42px; }
+  .auth-section { order: 4; flex: 1 0 100%; }
+  .auth-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .auth-buttons a { width: 100%; }
+  .user-info { justify-content: center; flex-wrap: wrap; }
+  .nav-menu ul { margin: 0; }
+  .nav-menu a { width: 100%; }
+}
+
+.nav-menu a:focus-visible, .mobile-menu-toggle:focus-visible,
+.auth-buttons a:focus-visible, .logout-btn:focus-visible {
+  outline: 3px solid #fde68a;
+  outline-offset: 3px;
 }

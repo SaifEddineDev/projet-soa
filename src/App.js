@@ -1,5 +1,5 @@
 ﻿import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
@@ -14,6 +14,7 @@ import Login from "./components/login/login.js";
 import Register from "./components/register/register.js";
 import AdminRoutes from './components/admin/AdminRoutes.js';
 import "./App.css";
+import "./responsive.css";
 
 function App() {
   const handleLogin = (userData) => {
@@ -52,6 +53,14 @@ function App() {
               } />
               <Route path="/register" element={<Register />} />
               <Route path="/admin/*" element={<AdminRoutes />} />
+              <Route path="*" element={
+                <section className="not-found" aria-labelledby="not-found-title">
+                  <p className="not-found-code">404</p>
+                  <h1 id="not-found-title">Cette page est introuvable</h1>
+                  <p>Le lien est peut-être incorrect ou la page a été déplacée.</p>
+                  <Link to="/" className="not-found-link">Retour à l’accueil</Link>
+                </section>
+              } />
             </Routes>
           </main>
           <Footer />
