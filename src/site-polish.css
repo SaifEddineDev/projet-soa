@@ -1292,3 +1292,25 @@ img { max-width: 100%; }
 .app select option:checked { color: #07536d; background-color: #e8f5f7; font-weight: 700; }
 .app input[type="checkbox"],
 .app input[type="radio"] { accent-color: #0b7891; cursor: pointer; }
+
+/* Tighten contact form rows and give the topic and message room */
+.main-content:not(:has(.admin-container)) .contact-page .contact-form {
+  row-gap: 10px;
+}
+.main-content:not(:has(.admin-container)) .contact-page .contact-form .form-group:has(select),
+.main-content:not(:has(.admin-container)) .contact-page .contact-form .form-group:has(textarea) {
+  grid-column: 1 / -1;
+}
+.main-content:not(:has(.admin-container)) .contact-page .contact-form .form-group:has(select) select {
+  width: 100%;
+}
+.main-content:not(:has(.admin-container)) .contact-page .contact-form .form-group textarea {
+  height: 155px;
+  min-height: 155px;
+}
+@media (min-width: 901px) {
+  .main-content:not(:has(.admin-container)) .contact-page .contact-form .form-group textarea {
+    height: 170px;
+    min-height: 170px;
+  }
+}
