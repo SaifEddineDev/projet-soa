@@ -1321,3 +1321,22 @@ img { max-width: 100%; }
     min-height: 170px;
   }
 }
+
+/* Use a two-thirds form column and prevent grid rows from stretching apart */
+.main-content:not(:has(.admin-container)) .contact-page .contact-form {
+  align-content: start;
+  row-gap: 7px;
+}
+@media (min-width: 901px) {
+  .main-content:not(:has(.admin-container)) .contact-page .contact-container {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+  .main-content:not(:has(.admin-container)) .contact-page .contact-form {
+    row-gap: 6px;
+  }
+  .main-content:not(:has(.admin-container)) .contact-page .map-container,
+  .main-content:not(:has(.admin-container)) .contact-page .map-container iframe {
+    height: 350px;
+    min-height: 350px;
+  }
+}
