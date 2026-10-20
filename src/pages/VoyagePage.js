@@ -130,10 +130,6 @@ const VoyagePage = () => {
             <button type="button" className="btn-search" onClick={() => handleSearch(searchTerm)}>
               <span className="search-button-icon" aria-hidden="true">✈</span>
               <span className="search-button-label">Rechercher</span>
-              <svg className="search-button-end-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="10.8" cy="10.8" r="6.2" />
-                <path d="m15.5 15.5 4.2 4.2" />
-              </svg>
             </button>
           </div>
         </div>
