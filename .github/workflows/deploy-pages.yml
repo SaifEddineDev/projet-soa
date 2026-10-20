@@ -32,7 +32,7 @@ jobs:
       - name: Build site
         run: npm run build
         env:
-          PUBLIC_URL: /projet-soa
+          PUBLIC_URL: /travelhub
           REACT_APP_API_URL: ${{ vars.REACT_APP_API_URL }}
           REACT_APP_GOOGLE_MAPS_API_KEY: ${{ vars.REACT_APP_GOOGLE_MAPS_API_KEY }}
           REACT_APP_STRIPE_PUBLIC_KEY: ${{ vars.REACT_APP_STRIPE_PUBLIC_KEY }}
