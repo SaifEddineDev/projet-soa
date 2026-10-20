@@ -21,7 +21,7 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <Link to="/" className="brand" aria-label="TravelHub, accueil" onClick={closeMenu}>
-          <img src={`${process.env.PUBLIC_URL || ''}/favion.png`} alt="" className="brand-logo" />
+          <img src={`${process.env.PUBLIC_URL || ''}/favion-transparent.png`} alt="" className="brand-logo" />
           <span className="brand-copy"><strong>TravelHub</strong><small>Le voyage en toute simplicité</small></span>
         </Link>
 

@@ -414,7 +414,7 @@
 }
 /* TravelHub landing page */
 .home-page { padding: 0 0 20px; color: #102a43; }
-.home-page .hero-section { position: relative; isolation: isolate; display: flex; flex-direction: column; gap: 42px; min-height: 540px; margin: 0 0 82px; padding: clamp(44px, 7vw, 88px) clamp(22px, 6vw, 76px) 0; border-radius: 0 0 28px 28px; color: #fff; text-align: left; background: linear-gradient(105deg, rgba(5, 32, 50, .88), rgba(7, 47, 73, .67) 52%, rgba(7, 47, 73, .25)), url('https://images.unsplash.com/photo-1659992206285-c3d37ce40f6f?auto=format&fit=crop&w=2000&q=85') center 48%/cover, #0b3956; }
+.home-page .hero-section { position: relative; isolation: isolate; display: flex; flex-direction: column; gap: 42px; min-height: 540px; margin: 0 0 82px; padding: clamp(44px, 7vw, 88px) clamp(22px, 6vw, 76px) 0; border-radius: 0 0 28px 28px; color: #fff; text-align: left; background: linear-gradient(105deg, rgba(5, 32, 50, .88), rgba(7, 47, 73, .67) 52%, rgba(7, 47, 73, .25)), url('https://images.unsplash.com/photo-1776761731066-c89caa8d25e6?auto=format&fit=crop&w=2000&q=85') center 48%/cover, #0b3956; }
 .hero-content { width: min(100%, 950px); margin: 0 auto; }
 .hero-eyebrow { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 20px; color: #fbd38d; font-size: .83rem; font-weight: 750; letter-spacing: .11em; text-transform: uppercase; }
 .hero-eyebrow span { color: #ffbd59; font-size: 1.15rem; }

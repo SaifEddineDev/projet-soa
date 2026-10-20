@@ -3,8 +3,9 @@
     "name":  "TravelHub â€” RÃ©servez votre prochain voyage",
     "icons":  [
                   {
-                      "src":  "favion.png",
-                      "type":  "image/png"
+                      "src":  "favion-transparent.png",
+                      "type":  "image/png",
+                      "sizes":  "any"
                   }
               ],
     "start_url":  ".",
