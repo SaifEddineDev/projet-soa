@@ -759,6 +759,7 @@ img { max-width: 100%; }
 
 /* Keep the reservation filters compact and align reset with both selects. */
 .main-content .user-reservations-page .reservations-container { row-gap: 14px !important; }
+.main-content .user-reservations-page .reservations-header { margin-bottom: 12px !important; }
 .main-content .user-reservations-page .filters-section {
   grid-template-columns: minmax(220px, .9fr) minmax(0, 2.1fr) !important;
   align-items: center;
@@ -771,7 +772,12 @@ img { max-width: 100%; }
   gap: 9px !important;
 }
 .main-content .user-reservations-page .filter-group { min-width: 0; }
-.main-content .user-reservations-page .filter-group:last-child { padding-top: 23px; }
+.main-content .user-reservations-page .filters-grid .filter-group:last-child {
+  margin: 0;
+  padding: 27px 0 24px;
+  border-bottom: 1px solid rgba(203, 213, 225, 0.3);
+}
+.main-content .user-reservations-page .filters-grid .filter-group:last-child::before { bottom: 0; }
 .main-content .user-reservations-page .filter-group select,
 .main-content .user-reservations-page .btn-reset-filters {
   box-sizing: border-box;
@@ -796,6 +802,8 @@ img { max-width: 100%; }
   }
   .main-content .user-reservations-page .filter-group:last-child {
     grid-column: 1 / -1;
-    padding-top: 0;
+    padding: 0;
+    border-bottom: 0;
   }
+  .main-content .user-reservations-page .filters-grid .filter-group:last-child::before { display: none; }
 }
