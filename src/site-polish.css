@@ -59,11 +59,12 @@ img { max-width: 100%; }
 /* Hotel search: keep filters and results in one predictable, viewport-aware layout. */
 .main-content:not(:has(.admin-container)):has(.hotels-page) {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1612px;
   min-height: calc(100vh - 82px);
   margin: 0 auto;
   padding: clamp(24px, 3vw, 38px) clamp(18px, 4vw, 56px);
 }
+.main-content:not(:has(.admin-container)) .hotels-page { width: 100%; max-width: none; padding: 0; }
 .main-content:not(:has(.admin-container)) .hotels-page > .hotels-header {
   min-height: 132px;
   align-items: center;
