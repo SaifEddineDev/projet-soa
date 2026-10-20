@@ -177,6 +177,10 @@ img { max-width: 100%; }
   box-shadow: 0 8px 24px rgba(16,42,67,.07);
 }
 .main-content:not(:has(.admin-container)) .hotel-image { display: block; height: 200px; flex: 0 0 200px; object-fit: cover; }
+.main-content:not(:has(.admin-container)) .hotel-image-wrap { position: relative; min-width: 0; height: 200px; flex: 0 0 200px; overflow: hidden; background: #e8eff3; }
+.main-content:not(:has(.admin-container)) .hotel-image-wrap .hotel-image { width: 100%; height: 100%; flex: initial; object-fit: cover; transition: transform .35s ease; }
+.main-content:not(:has(.admin-container)) .hotel-card:hover .hotel-image { transform: scale(1.035); }
+.main-content:not(:has(.admin-container)) .hotel-category { position: absolute; top: 12px; left: 12px; max-width: calc(100% - 24px); overflow: hidden; padding: 6px 9px; border: 1px solid rgba(255,255,255,.38); border-radius: 8px; color: #fff; background: rgba(8,45,67,.82); font-size: .68rem; font-weight: 750; text-overflow: ellipsis; white-space: nowrap; backdrop-filter: blur(8px); }
 .main-content:not(:has(.admin-container)) .hotel-content { display: flex; min-height: 0; flex: 1; flex-direction: column; padding: 16px; }
 .main-content:not(:has(.admin-container)) .hotel-header { align-items: flex-start; gap: 8px; margin-bottom: 12px; }
 .main-content:not(:has(.admin-container)) .hotel-name { display: -webkit-box; min-width: 0; overflow: hidden; font-size: 1.05rem; line-height: 1.3; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
@@ -185,12 +189,16 @@ img { max-width: 100%; }
 .main-content:not(:has(.admin-container)) .hotel-price small { margin-top: 3px; color: #76889a; font-size: .66rem; font-weight: 600; }
 .main-content:not(:has(.admin-container)) .hotel-location { display: flex; align-items: center; gap: 7px; margin-bottom: 9px; font-size: .86rem; }
 .main-content:not(:has(.admin-container)) .hotel-rating { display: flex; align-items: center; gap: 8px; margin-bottom: 9px; }
+.main-content:not(:has(.admin-container)) .hotel-rating-meta { display: inline-flex; align-items: center; gap: 4px; color: #718397; font-size: .7rem; white-space: nowrap; }
+.main-content:not(:has(.admin-container)) .hotel-rating-meta strong { color: #244a62; font-size: .78rem; }
 .main-content:not(:has(.admin-container)) .rating-stars { position: relative; display: inline-block; overflow: hidden; font-size: 1.18rem; letter-spacing: 2px; line-height: 1; white-space: nowrap; }
 .main-content:not(:has(.admin-container)) .rating-stars-empty { display: block; color: #d9e1e8; }
 .main-content:not(:has(.admin-container)) .rating-stars-filled { position: absolute; top: 0; left: 0; overflow: hidden; color: #f5a623; text-shadow: 0 2px 5px rgba(245,166,35,.25); white-space: nowrap; }
 .main-content:not(:has(.admin-container)) .hotel-description { display: -webkit-box; min-height: 42px; flex: 1; overflow: hidden; margin-bottom: 10px; color: #607487; font-size: .87rem; line-height: 1.5; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.main-content:not(:has(.admin-container)) .hotel-highlight { overflow: hidden; margin: 0 0 10px; color: #0b6686; font-size: .73rem; font-weight: 750; text-overflow: ellipsis; white-space: nowrap; }
 .main-content:not(:has(.admin-container)) .hotel-amenities { min-height: 29px; gap: 6px; margin-bottom: 10px; }
 .main-content:not(:has(.admin-container)) .amenity-tag { padding: 5px 8px; border: 1px solid #e8eef3; border-radius: 8px; color: #31546b; background: #f4f8fa; font-size: .73rem; font-weight: 650; }
+.main-content:not(:has(.admin-container)) .amenity-extra { color: #0b6686; background: #edf6f8; }
 .main-content:not(:has(.admin-container)) .hotel-actions { gap: 9px; margin-top: auto; padding-top: 11px; border-top: 1px solid #e5edf2; }
 .main-content:not(:has(.admin-container)) .hotel-actions button { position: relative; display: inline-flex; min-width: 0; min-height: 46px; align-items: center; justify-content: center; gap: 9px; overflow: hidden; border: 0; border-radius: 11px; color: #fff; font-size: .88rem; font-weight: 800; letter-spacing: .01em; box-shadow: 0 5px 12px rgba(16,42,67,.13), inset 0 1px rgba(255,255,255,.2); transition: transform .18s ease, box-shadow .18s ease, filter .18s ease; }
 .main-content:not(:has(.admin-container)) .hotel-actions .btn-details { background: linear-gradient(135deg, #4387f5, #2866d7); }

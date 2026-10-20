@@ -1,6 +1,19 @@
 ﻿import React from 'react';
 import './SearchFilters.css';
 
+const amenityOptions = [
+  { value: 'wifi', label: 'Wi-Fi' },
+  { value: 'pool', label: 'Piscine' },
+  { value: 'spa', label: 'Spa' },
+  { value: 'restaurant', label: 'Restaurant' },
+  { value: 'gym', label: 'Salle de sport' },
+  { value: 'parking', label: 'Parking' },
+  { value: 'fireplace', label: 'Cheminée' },
+  { value: 'ski', label: 'Ski' },
+  { value: 'beach', label: 'Plage' },
+  { value: 'breakfast', label: 'Petit-déjeuner' }
+];
+
 const SearchFilters = ({ filters, onFilterChange }) => {
   const handleStarChange = (star) => {
     const newStars = filters.stars.includes(star)
@@ -51,23 +64,19 @@ const SearchFilters = ({ filters, onFilterChange }) => {
       <div className="filter-group">
         <h4>Équipements</h4>
         <div className="amenities-grid">
-          {['wifi', 'pool', 'spa', 'restaurant', 'gym', 'parking'].map(amenity => (
-            <label key={amenity} className="amenity-option">
+          {amenityOptions.map(({ value, label }) => (
+            <label key={value} className="amenity-option">
               <input
                 type="checkbox"
-                checked={filters.amenities.includes(amenity)}
+                checked={filters.amenities.includes(value)}
                 onChange={() => {
-                  const newAmenities = filters.amenities.includes(amenity)
-                    ? filters.amenities.filter(a => a !== amenity)
-                    : [...filters.amenities, amenity];
+                  const newAmenities = filters.amenities.includes(value)
+                    ? filters.amenities.filter(a => a !== value)
+                    : [...filters.amenities, value];
                   onFilterChange({ ...filters, amenities: newAmenities });
                 }}
               />
-              <span>{amenity === 'wifi' ? 'WiFi' : 
-                     amenity === 'pool' ? 'Piscine' : 
-                     amenity === 'spa' ? 'Spa' : 
-                     amenity === 'restaurant' ? 'Restaurant' : 
-                     amenity === 'gym' ? 'Gym' : 'Parking'}</span>
+              <span>{label}</span>
             </label>
           ))}
         </div>

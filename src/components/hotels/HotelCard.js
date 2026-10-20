@@ -11,12 +11,17 @@ const HotelCard = ({ hotel }) => {
     fireplace: 'Cheminée',
     parking: 'Parking',
     ski: 'Ski',
-    beach: 'Plage'
+    beach: 'Plage',
+    breakfast: 'Petit-déjeuner',
+    shuttle: 'Navette'
   };
 
   return (
-    <article className="hotel-card" aria-label={hotel.name}>
-      <img src={hotel.image} alt={hotel.name} className="hotel-image" loading="lazy" />
+    <article id={`hotel-${hotel.id}`} className="hotel-card" aria-label={hotel.name}>
+      <div className="hotel-image-wrap">
+        <img src={hotel.image} alt={hotel.name} className="hotel-image" loading="lazy" />
+        {hotel.category && <span className="hotel-category">{hotel.category}</span>}
+      </div>
       <div className="hotel-content">
         <div className="hotel-header">
           <h3 className="hotel-name">{hotel.name}</h3>
@@ -32,12 +37,15 @@ const HotelCard = ({ hotel }) => {
               style={{ width: `${Math.max(0, Math.min(5, Number(hotel.rating) || 0)) * 20}%` }}
             >★★★★★</span>
           </span>
+          <span className="hotel-rating-meta"><strong>{Number(hotel.rating).toFixed(1)}</strong><span>({hotel.reviewCount || 0} avis)</span></span>
         </div>
         <p className="hotel-description">{hotel.description}</p>
+        {hotel.highlight && <p className="hotel-highlight">{hotel.highlight}</p>}
         <div className="hotel-amenities">
           {hotel.amenities.slice(0, 3).map((amenity, index) => (
             <span key={`${amenity}-${index}`} className="amenity-tag">{amenityLabels[amenity] || amenity}</span>
           ))}
+          {hotel.amenities.length > 3 && <span className="amenity-tag amenity-extra">+{hotel.amenities.length - 3}</span>}
         </div>
         <div className="hotel-actions">
           <button type="button" className="btn-details">Détails <span aria-hidden="true">↗</span></button>

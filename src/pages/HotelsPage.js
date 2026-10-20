@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './HotelsPage.css';
+import hotelCatalog from './hotelCatalog';
 import HotelCard from '../components/hotels/HotelCard';
 import SearchFilters from '../components/hotels/SearchFilters';
 import MapComponent from '../components/map/MapComponent';
@@ -19,7 +20,7 @@ const HotelsPage = () => {
 
   useEffect(() => {
     // Données fictives pour les hôtels
-    const mockHotels = [
+    const mockHotels = hotelCatalog.length ? hotelCatalog : [
       {
         id: 1,
         name: "Hôtel Paris Centre",
