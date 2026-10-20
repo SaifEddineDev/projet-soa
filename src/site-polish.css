@@ -1322,6 +1322,61 @@ img { max-width: 100%; }
   }
 }
 
+/* Give native choice lists a richer popup where customizable selects are supported */
+@supports (appearance: base-select) {
+  .app select,
+  .app select::picker(select) {
+    appearance: base-select;
+  }
+  .app select {
+    background-image: none !important;
+  }
+  .app select::picker-icon {
+    color: #0b6686;
+    font-size: .82rem;
+    transition: transform .18s ease;
+  }
+  .app select:open::picker-icon { transform: rotate(180deg); }
+  .app select::picker(select) {
+    max-block-size: min(50vh, 360px);
+    overflow-y: auto;
+    margin-block: 7px;
+    padding: 6px;
+    border: 1px solid #dce8ed;
+    border-radius: 14px;
+    color: #18384f;
+    background: #fff;
+    box-shadow: 0 16px 38px rgba(16, 42, 67, .18);
+  }
+  .app select option {
+    display: flex;
+    min-block-size: 40px;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    border-radius: 9px;
+    background: transparent;
+    transition: color .15s ease, background-color .15s ease;
+  }
+  .app select option:hover,
+  .app select option:focus { color: #07536d; background: #edf7f8; }
+  .app select option:checked {
+    color: #fff;
+    background: linear-gradient(100deg, #0b6686, #10869a);
+    font-weight: 750;
+  }
+  .app select option::checkmark { margin-inline-start: auto; color: #fff; font-weight: 900; }
+  .app select optgroup {
+    padding: 8px 11px 5px;
+    color: #0b6686;
+    background: #f3f8fa;
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+}
+
 /* Use a two-thirds form column and prevent grid rows from stretching apart */
 .main-content:not(:has(.admin-container)) .contact-page .contact-form {
   align-content: start;
