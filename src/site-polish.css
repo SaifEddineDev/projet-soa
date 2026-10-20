@@ -425,6 +425,29 @@ img { max-width: 100%; }
 .main-content:not(:has(.admin-container)) .taxi-map-container .map-content h3 { margin-bottom: 14px; font-size: 1.2rem; }
 .main-content:not(:has(.admin-container)) .taxi-map-container .map-legend { gap: 12px 20px; }
 .main-content:not(:has(.admin-container)) .taxi-map-container .map-placeholder { background: radial-gradient(circle at 20% 10%,rgba(114,208,215,.55),transparent 35%),linear-gradient(135deg,#0c5873,#123d5a); }
+.main-content:not(:has(.admin-container)) .taxi-map-container .map-content { width: 100%; max-height: 100%; overflow-y: auto; padding: 12px 18px; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.35) transparent; }
+.main-content:not(:has(.admin-container)) .taxi-map-container .map-content h3 { margin: 0 0 11px; color: #fff; font-size: 1.08rem; line-height: 1.3; }
+.main-content:not(:has(.admin-container)) .taxi-map-container .map-points { width: min(100%, 480px); gap: 7px; margin: 0 auto 10px; }
+.main-content:not(:has(.admin-container)) .taxi-map-container .map-point { min-width: 0; flex-wrap: nowrap; gap: 10px; padding: 8px 12px; border: 1px solid rgba(255,255,255,.09); border-radius: 10px; background: rgba(255,255,255,.1); }
+.main-content:not(:has(.admin-container)) .taxi-map-container .point-icon { flex: 0 0 24px; font-size: 1.1rem; text-align: center; }
+.main-content:not(:has(.admin-container)) .taxi-map-container .point-label { min-width: 0; overflow-wrap: anywhere; color: rgba(255,255,255,.92); font-size: .82rem; line-height: 1.35; }
+.main-content:not(:has(.admin-container)) .taxi-map-container .map-legend { gap: 7px 14px; margin: 0; font-size: .72rem; }
+.booking-confirmation-overlay { position: fixed; z-index: 2000; inset: 0; display: grid; place-items: center; overflow-y: auto; padding: 20px; background: rgba(7,27,40,.58); backdrop-filter: blur(5px); animation: confirmation-backdrop-in .18s ease-out; }
+.booking-confirmation-dialog { width: min(100%, 480px); padding: clamp(24px, 5vw, 36px); border: 1px solid rgba(255,255,255,.75); border-radius: 22px; background: linear-gradient(155deg,#fff,#f7fbfc); box-shadow: 0 24px 70px rgba(5,30,46,.28); text-align: center; animation: confirmation-dialog-in .22s ease-out; }
+.booking-confirmation-icon { display: grid; width: 54px; height: 54px; place-items: center; margin: 0 auto 14px; border-radius: 50%; color: #fff; background: linear-gradient(145deg,#15c18b,#079875); box-shadow: 0 8px 20px rgba(9,158,116,.22); font-size: 1.6rem; font-weight: 850; }
+.booking-confirmation-eyebrow { margin: 0 0 7px; color: #0b7990; font-size: .7rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.booking-confirmation-dialog h2 { margin: 0 0 8px; color: #12334a; font-size: clamp(1.25rem,4vw,1.6rem); font-weight: 850; line-height: 1.2; }
+.booking-confirmation-copy { margin: 0 0 19px; color: #6b7e8e; font-size: .9rem; }
+.booking-confirmation-details { display: grid; gap: 8px; margin-bottom: 18px; padding: 12px; border: 1px solid #e5edf2; border-radius: 13px; background: #f4f8fa; text-align: left; }
+.booking-confirmation-details div { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 7px 8px; border-bottom: 1px solid #e2eaf0; font-size: .86rem; }
+.booking-confirmation-details div:last-child { border-bottom: 0; }
+.booking-confirmation-details span { color: #718397; }
+.booking-confirmation-details strong { color: #15344a; text-align: right; }
+.booking-confirmation-button { width: 100%; min-height: 44px; padding: 10px 16px; border: 0; border-radius: 10px; color: #fff; background: linear-gradient(115deg,#0b6686,#0b7990); box-shadow: 0 7px 16px rgba(11,102,134,.18); font-size: .9rem; font-weight: 750; transition: transform .18s ease, box-shadow .18s ease; }
+.booking-confirmation-button:hover { transform: translateY(-1px); box-shadow: 0 10px 20px rgba(11,102,134,.24); }
+.booking-confirmation-button:focus-visible { outline: 3px solid rgba(11,121,144,.3); outline-offset: 3px; }
+@keyframes confirmation-backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes confirmation-dialog-in { from { opacity: 0; transform: translateY(8px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
 .main-content:not(:has(.admin-container)) .taxi-page .info-card { padding: 22px; border: 1px solid #e5edf2; border-radius: 17px; box-shadow: 0 10px 28px rgba(16,42,67,.06); }
 .main-content:not(:has(.admin-container)) .taxi-page .info-card h3 { color: #15344a; font-size: 1.08rem; font-weight: 800; }
 .main-content:not(:has(.admin-container)) .taxi-page .info-card li { align-items: flex-start; gap: 9px; line-height: 1.5; }
@@ -524,6 +547,8 @@ img { max-width: 100%; }
   .main-content:not(:has(.admin-container)) .taxi-page .taxi-option { padding: 12px; }
   .main-content:not(:has(.admin-container)) .taxi-page .confirmation-card { padding: 20px 14px; }
   .main-content:not(:has(.admin-container)) .taxi-map-container { height: 220px; }
+  .booking-confirmation-overlay { padding: 14px; }
+  .booking-confirmation-dialog { padding: 24px 18px; border-radius: 18px; }
   .main-content:not(:has(.admin-container)) .taxi-page .booking-steps .step span { font-size: .72rem; }
   .main-content:not(:has(.admin-container)) .voyage-content { gap: 18px; }
   .main-content:not(:has(.admin-container)) .trips-grid { grid-template-columns: minmax(0, 1fr); }

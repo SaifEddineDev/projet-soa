@@ -18,6 +18,7 @@ const TaxiPage = () => {
   const [selectedTaxi, setSelectedTaxi] = useState(null);
   const [estimatedPrice, setEstimatedPrice] = useState(0);
   const [bookingStep, setBookingStep] = useState(1);
+  const [bookingConfirmationOpen, setBookingConfirmationOpen] = useState(false);
 
   useEffect(() => {
     // Simulation de taxis disponibles
@@ -72,20 +73,9 @@ const TaxiPage = () => {
   };
 
   const confirmBooking = () => {
-    alert(`Réservation confirmée !\nTaxi: ${selectedTaxi.name}\nPrix: ${estimatedPrice}€\nVotre chauffeur arrive dans ${selectedTaxi.eta} minutes.`);
+    if (!selectedTaxi) return;
     setBookingStep(3);
-    setTimeout(() => {
-      setBookingStep(1);
-      setSelectedTaxi(null);
-      setBookingInfo({
-        pickup: '',
-        destination: '',
-        date: '',
-        time: '',
-        passengers: 1,
-        taxiType: 'standard'
-      });
-    }, 5000);
+    setBookingConfirmationOpen(true);
   };
 
   return (
@@ -252,6 +242,31 @@ const TaxiPage = () => {
           </div>
         </div>
       </div>
+
+      {bookingConfirmationOpen && (
+        <div className="booking-confirmation-overlay" onClick={() => setBookingConfirmationOpen(false)}>
+          <section
+            className="booking-confirmation-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="booking-confirmation-title"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="booking-confirmation-icon" aria-hidden="true">✓</div>
+            <p className="booking-confirmation-eyebrow">Confirmation de réservation</p>
+            <h2 id="booking-confirmation-title">Votre taxi est réservé !</h2>
+            <p className="booking-confirmation-copy">Votre chauffeur arrive dans quelques minutes.</p>
+            <div className="booking-confirmation-details">
+              <div><span>Véhicule</span><strong>{selectedTaxi?.name}</strong></div>
+              <div><span>Prix estimé</span><strong>{estimatedPrice} €</strong></div>
+              <div><span>Arrivée estimée</span><strong>{selectedTaxi?.eta} min</strong></div>
+            </div>
+            <button className="booking-confirmation-button" onClick={() => setBookingConfirmationOpen(false)}>
+              Voir la confirmation
+            </button>
+          </section>
+        </div>
+      )}
     </div>
   );
 };
