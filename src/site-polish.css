@@ -771,6 +771,10 @@ img { max-width: 100%; }
   .app select::picker-icon {
     flex: 0 0 auto;
     margin-inline-start: auto;
+    margin-inline-end: 0;
+  }
+  .app select {
+    padding-inline-end: 12px !important;
   }
 }
 
