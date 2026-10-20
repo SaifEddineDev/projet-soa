@@ -921,3 +921,90 @@ img { max-width: 100%; }
     font-size: .58rem;
   }
 }
+
+/* Unified city travel hero for hotel, taxi, and trip discovery. */
+.home-page .hero-section {
+  background-image:
+    linear-gradient(105deg, rgba(5, 32, 50, .88), rgba(7, 47, 73, .68) 54%, rgba(7, 47, 73, .42)),
+    url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2200&q=85');
+  background-position: center, center 54%;
+  background-size: cover;
+}
+.home-page .hero-search-wrap {
+  position: relative;
+  width: min(100%, 1160px);
+  padding: 20px 22px 13px;
+  border: 1px solid rgba(255, 255, 255, .78);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, .97);
+  box-shadow: 0 22px 60px rgba(2, 24, 39, .28);
+}
+.home-page .hero-search-wrap::before {
+  position: absolute;
+  top: 0;
+  right: 18px;
+  left: 18px;
+  height: 3px;
+  border-radius: 0 0 99px 99px;
+  background: linear-gradient(90deg, #10b981, #0b7891 55%, #f2b84b);
+  content: '';
+}
+.home-page .hero-search-heading { padding: 0 4px; }
+.home-page .hero-search-heading span { color: #10344b; font-size: 1.12rem; letter-spacing: -.015em; }
+.home-page .hero-search-heading small { color: #667b8c; font-size: .9rem; }
+.home-page .hero-search-wrap .search-bar {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 11px;
+  margin-top: 12px;
+  padding: 13px 2px 2px;
+  border-top: 1px solid #edf2f5;
+}
+.home-page .hero-search-wrap .search-input label { margin-bottom: 7px; color: #3e566a; font-size: .78rem; font-weight: 750; }
+.home-page .hero-search-wrap .search-input label::before { width: 7px; height: 7px; background: #4284f4; }
+.home-page .hero-search-wrap .search-input input,
+.home-page .hero-search-wrap .search-input select {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 11px;
+  border: 1px solid #d8e2e9;
+  border-radius: 11px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(16, 42, 67, .035);
+  color: #253e52;
+  font-size: .88rem;
+}
+.home-page .hero-search-wrap .search-input input:focus,
+.home-page .hero-search-wrap .search-input select:focus { border-color: #3e83ef; box-shadow: 0 0 0 3px rgba(62, 131, 239, .13); transform: none; }
+.home-page .hero-search-wrap .btn-search {
+  min-height: 48px;
+  margin-top: 2px;
+  padding: 11px 17px;
+  border-radius: 11px;
+  background: linear-gradient(100deg, #0c5674, #0b7891);
+  box-shadow: 0 7px 16px rgba(11, 88, 115, .2);
+  font-size: .95rem;
+  font-weight: 750;
+}
+.home-page .hero-search-wrap .btn-search:hover { background: linear-gradient(100deg, #08445d, #09677c); transform: translateY(-1px); }
+@media (max-width: 900px) {
+  .home-page .hero-search-wrap .search-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-page .hero-search-wrap .search-input:first-child { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+  .home-page .hero-section {
+    background-image:
+      linear-gradient(180deg, rgba(5, 32, 50, .79), rgba(7, 47, 73, .64)),
+      url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=80');
+    background-position: center, center;
+  }
+  .home-page .hero-search-wrap { padding: 17px 13px 9px; border-radius: 15px; }
+  .home-page .hero-search-heading { align-items: flex-start; }
+  .home-page .hero-search-heading span { font-size: 1rem; }
+  .home-page .hero-search-heading small { font-size: .8rem; }
+  .home-page .hero-search-wrap .search-bar { grid-template-columns: minmax(0, 1fr); gap: 9px; padding-top: 11px; }
+  .home-page .hero-search-wrap .search-input:first-child { grid-column: auto; }
+  .home-page .hero-search-wrap .search-input input,
+  .home-page .hero-search-wrap .search-input select { min-height: 44px; }
+  .home-page .hero-search-wrap .btn-search { min-height: 44px; }
+}
