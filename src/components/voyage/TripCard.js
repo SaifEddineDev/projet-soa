@@ -26,7 +26,7 @@ const TripCard = ({ trip }) => {
         <div className="trip-duration">📅 {trip.duration}</div>
         <div className="trip-rating">
           <span className="rating-value">{trip.rating}</span>
-          <div className="stars">★★★★★</div>
+          <span className="trip-rating-label">Note voyageurs</span>
         </div>
         <p className="trip-description">{trip.description}</p>
         <div className="included-list">
@@ -38,8 +38,8 @@ const TripCard = ({ trip }) => {
           </div>
         </div>
         <div className="trip-actions">
-          <button className="btn-details">Voir détails</button>
-          <button className="btn-book">Réserver</button>
+          <button className="btn-details">Voir détails <span aria-hidden="true">↗</span></button>
+          <button className="btn-book">Réserver <span aria-hidden="true">→</span></button>
         </div>
       </div>
     </div>

@@ -530,6 +530,49 @@ img { max-width: 100%; }
 .main-content:not(:has(.admin-container)) .trip-actions button { min-width: 0; min-height: 44px; padding: 9px 12px; border: 0; border-radius: 9px; font-size: .86rem; font-weight: 750; }
 .main-content:not(:has(.admin-container)) .trip-actions .btn-details { background: #4387f5; }
 .main-content:not(:has(.admin-container)) .trip-actions .btn-book { background: #0eaa7a; }
+.main-content:not(:has(.admin-container)) .voyage-page { min-width: 0; overflow-x: clip; }
+.main-content:not(:has(.admin-container)) .voyage-container,
+.main-content:not(:has(.admin-container)) .categories-grid,
+.main-content:not(:has(.admin-container)) .voyage-content,
+.main-content:not(:has(.admin-container)) .trips-section,
+.main-content:not(:has(.admin-container)) .trips-grid,
+.main-content:not(:has(.admin-container)) .trip-card,
+.main-content:not(:has(.admin-container)) .trip-content { min-width: 0; max-width: 100%; }
+.main-content:not(:has(.admin-container)) .categories-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 145px), 1fr)); }
+.main-content:not(:has(.admin-container)) .voyage-hero .search-bar { min-width: 0; }
+.main-content:not(:has(.admin-container)) .voyage-hero .search-bar input { min-width: 0; flex: 1 1 auto; }
+.main-content:not(:has(.admin-container)) .voyage-hero .search-bar .btn-search { display: inline-flex; width: auto; min-width: 154px; min-height: 44px; flex: 0 0 auto; align-items: center; justify-content: center; gap: 8px; padding: 0 16px; border-radius: 10px; color: #fff; background: #0b5873; font-size: .86rem; font-weight: 800; line-height: 1; text-transform: none; white-space: nowrap; }
+.main-content:not(:has(.admin-container)) .voyage-hero .search-bar .btn-search:hover { background: #08475f; }
+.main-content:not(:has(.admin-container)) .filters-panel { padding: 17px; }
+.main-content:not(:has(.admin-container)) .filters-panel .destination-filter { gap: 13px; }
+.main-content:not(:has(.admin-container)) .filters-panel .filter-group { min-width: 0; margin: 0; }
+.main-content:not(:has(.admin-container)) .filters-panel .filter-group h3 { margin-bottom: 6px; font-size: .9rem; }
+.main-content:not(:has(.admin-container)) .filters-panel .destination-input { min-height: 38px; margin-bottom: 0; padding: 8px 10px; font-size: .84rem; }
+.main-content:not(:has(.admin-container)) .filters-panel .checkbox-group { gap: 5px; }
+.main-content:not(:has(.admin-container)) .filters-panel .checkbox-label { gap: 7px; font-size: .82rem; line-height: 1.3; }
+.main-content:not(:has(.admin-container)) .filters-panel .checkbox-label input { margin: 0; accent-color: #0b7990; }
+.main-content:not(:has(.admin-container)) .filters-panel .price-slider { margin: 4px 0; }
+.main-content:not(:has(.admin-container)) .filters-panel .price-range-display { margin-top: 2px; font-size: .78rem; }
+.main-content:not(:has(.admin-container)) .filters-panel .btn-apply { min-height: 39px; margin-top: 0; padding: 8px 12px; border-radius: 9px; font-size: .84rem; }
+.main-content:not(:has(.admin-container)) .trip-card { border-radius: 17px; background: #fff; }
+.main-content:not(:has(.admin-container)) .trip-image { width: 100%; height: 190px; flex: 0 0 190px; object-fit: cover; }
+.main-content:not(:has(.admin-container)) .trip-content { padding: 18px; }
+.main-content:not(:has(.admin-container)) .trip-header { align-items: flex-start; gap: 8px; margin-bottom: 9px; }
+.main-content:not(:has(.admin-container)) .trip-title { font-size: 1.05rem; font-weight: 800; line-height: 1.3; }
+.main-content:not(:has(.admin-container)) .trip-price { color: #08a777; font-size: 1.18rem; }
+.main-content:not(:has(.admin-container)) .trip-destination,
+.main-content:not(:has(.admin-container)) .trip-duration { display: flex; align-items: center; gap: 6px; margin-bottom: 7px; font-size: .84rem; }
+.main-content:not(:has(.admin-container)) .trip-rating { gap: 8px; margin: 2px 0 8px; }
+.main-content:not(:has(.admin-container)) .trip-rating .rating-value { padding: 3px 7px; border-radius: 7px; color: #a96500; background: #fff4df; font-size: .78rem; font-weight: 800; }
+.main-content:not(:has(.admin-container)) .trip-rating-label { color: #718397; font-size: .76rem; }
+.main-content:not(:has(.admin-container)) .trip-description { min-height: 42px; margin-bottom: 12px; font-size: .85rem; line-height: 1.5; }
+.main-content:not(:has(.admin-container)) .included-list { margin-top: auto; }
+.main-content:not(:has(.admin-container)) .included-list h4 { margin-bottom: 7px; font-size: .82rem; }
+.main-content:not(:has(.admin-container)) .included-items { gap: 6px; margin-bottom: 12px; }
+.main-content:not(:has(.admin-container)) .included-tag { padding: 5px 8px; border: 1px solid #e0eee8; border-radius: 7px; font-size: .72rem; }
+.main-content:not(:has(.admin-container)) .trip-actions { gap: 9px; padding-top: 11px; border-top: 1px solid #e5edf2; }
+.main-content:not(:has(.admin-container)) .trip-actions button { display: inline-flex; min-width: 0; min-height: 44px; align-items: center; justify-content: space-between; gap: 7px; padding: 0 10px 0 12px; border: 0; border-radius: 10px; font-size: .82rem; font-weight: 800; white-space: nowrap; box-shadow: 0 5px 12px rgba(16,42,67,.12), inset 0 1px rgba(255,255,255,.18); }
+.main-content:not(:has(.admin-container)) .trip-actions button span { display: grid; width: 22px; height: 22px; flex: 0 0 22px; place-items: center; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; background: rgba(255,255,255,.15); font-size: .78rem; }
 @media (max-width: 900px) {
   .main-content:not(:has(.admin-container)) .taxi-container { grid-template-columns: minmax(0, 1fr); }
   .main-content:not(:has(.admin-container)) .voyage-content { grid-template-columns: minmax(0, 1fr); }
@@ -553,4 +596,5 @@ img { max-width: 100%; }
   .main-content:not(:has(.admin-container)) .voyage-content { gap: 18px; }
   .main-content:not(:has(.admin-container)) .trips-grid { grid-template-columns: minmax(0, 1fr); }
   .main-content:not(:has(.admin-container)) .trips-header h2 { font-size: 1.12rem; }
+  .main-content:not(:has(.admin-container)) .voyage-hero .search-bar .btn-search { width: 100%; min-width: 0; }
 }

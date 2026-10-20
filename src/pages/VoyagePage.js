@@ -7,6 +7,7 @@ const VoyagePage = () => {
   const [trips, setTrips] = useState([]);
   const [filteredTrips, setFilteredTrips] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
   const [filters, setFilters] = useState({
     destination: 'all',
     duration: 'all',
@@ -120,10 +121,14 @@ const VoyagePage = () => {
             <input
               type="text"
               placeholder="Rechercher une destination..."
-              onChange={(e) => handleSearch(e.target.value)}
+              value={searchTerm}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+                handleSearch(e.target.value);
+              }}
             />
-            <button className="btn-search">
-              ✈️ Rechercher
+            <button type="button" className="btn-search" onClick={() => handleSearch(searchTerm)}>
+              <span aria-hidden="true">✈</span><span>Rechercher</span>
             </button>
           </div>
         </div>
