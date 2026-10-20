@@ -237,7 +237,7 @@ const ReservationsPage = () => {
   };
 
   return (
-    <div className="reservations-page">
+    <div className="reservations-page user-reservations-page">
       <div className="reservations-header">
         <div className="header-content">
           <h1>Mes Réservations</h1>
