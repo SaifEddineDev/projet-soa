@@ -1133,11 +1133,35 @@ img { max-width: 100%; }
 
 /* Keep both hero calls to action side by side on phones */
 @media (max-width: 600px) {
+  html,
+  body,
+  #root,
+  .app {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+  .main-content:has(> .home-page),
+  .home-page {
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+  .home-page .hero-section {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+  }
+  .home-page .hero-content,
+  .home-page .hero-search-wrap {
+    min-width: 0;
+    max-width: 100%;
+  }
   .home-page .hero-actions {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: stretch;
-    gap: 8px;
+    gap: 6px;
     width: 100%;
   }
   .home-page .hero-primary-link,
@@ -1145,11 +1169,11 @@ img { max-width: 100%; }
     box-sizing: border-box;
     width: 100%;
     min-width: 0;
-    min-height: 46px;
-    gap: 6px;
-    padding: 0 clamp(4px, 1.5vw, 10px);
-    border-radius: 12px;
-    font-size: clamp(.62rem, 3.25vw, .88rem);
+    min-height: 40px;
+    gap: 4px;
+    padding: 0 clamp(3px, 1.2vw, 7px);
+    border-radius: 10px;
+    font-size: clamp(.58rem, 3vw, .78rem);
     line-height: 1.15;
     text-align: center;
     white-space: nowrap;
