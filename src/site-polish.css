@@ -1611,6 +1611,9 @@ img { max-width: 100%; }
 
 /* Keep custom calendar popovers visible above search and booking forms. */
 .search-bar:has(.calendar-date-picker) { overflow: visible; }
+.home-page .hero-section:has(.calendar-date-popover) { z-index: 999; }
+.home-page .hero-search-wrap:has(.calendar-date-popover) { z-index: 1301; }
+.calendar-date-popover { background: #fff; opacity: 1; }
 .home-page .hero-search-wrap .search-input .calendar-date-field input {
   min-height: 48px;
   padding: 10px 55px 10px 14px !important;
