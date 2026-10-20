@@ -724,6 +724,30 @@ img { max-width: 100%; }
   }
 }
 
+/* Anchor every option label to the left and its selected checkmark to the right */
+.app select option,
+.app select optgroup {
+  direction: ltr !important;
+  text-align: left !important;
+}
+@supports (appearance: base-select) {
+  .app select::picker(select) {
+    direction: ltr;
+    text-align: left;
+  }
+  .app select option {
+    display: flex;
+    justify-content: space-between;
+    text-align: left !important;
+  }
+  .app select option::checkmark {
+    order: 1;
+    flex: 0 0 auto;
+    margin-inline-start: auto !important;
+    margin-inline-end: 0 !important;
+  }
+}
+
 @media (min-width: 901px) {
   .main-content:not(:has(.admin-container)) .contact-page .map-section h2 {
     position: relative;
