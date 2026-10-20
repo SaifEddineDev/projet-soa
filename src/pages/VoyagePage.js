@@ -128,7 +128,8 @@ const VoyagePage = () => {
               }}
             />
             <button type="button" className="btn-search" onClick={() => handleSearch(searchTerm)}>
-              <span aria-hidden="true">✈</span><span>Rechercher</span>
+              <span className="search-button-icon" aria-hidden="true">✈</span>
+              <span className="search-button-label">Rechercher</span>
             </button>
           </div>
         </div>
