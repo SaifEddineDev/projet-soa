@@ -385,13 +385,16 @@ img { max-width: 100%; }
   margin: 0 auto;
 }
 .main-content:not(:has(.admin-container)) .taxi-hero,
-.main-content:not(:has(.admin-container)) .voyage-hero { min-height: 205px; display: flex; align-items: center; }
+.main-content:not(:has(.admin-container)) .voyage-hero { min-height: 205px; display: block; }
 .main-content:not(:has(.admin-container)) .taxi-hero { margin-bottom: 26px; }
 .main-content:not(:has(.admin-container)) .taxi-container { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(18px, 2.2vw, 28px); }
 .main-content:not(:has(.admin-container)) .booking-section,
 .main-content:not(:has(.admin-container)) .map-section { min-width: 0; }
 .main-content:not(:has(.admin-container)) .booking-steps { gap: 10px; margin-bottom: 18px; }
 .main-content:not(:has(.admin-container)) .booking-steps .step span { max-width: 130px; line-height: 1.35; }
+.main-content:not(:has(.admin-container)) .taxi-page .booking-steps { gap: 8px; margin-bottom: 13px; }
+.main-content:not(:has(.admin-container)) .taxi-page .booking-steps .step-number { width: 34px; height: 34px; margin-bottom: 5px; }
+.main-content:not(:has(.admin-container)) .taxi-page .booking-steps::before { top: 17px; }
 .main-content:not(:has(.admin-container)) .booking-form-card,
 .main-content:not(:has(.admin-container)) .taxi-selection-section { margin-bottom: 0; padding: clamp(20px, 2.5vw, 30px); }
 .main-content:not(:has(.admin-container)) .booking-form-card h2,
@@ -402,6 +405,13 @@ img { max-width: 100%; }
 .main-content:not(:has(.admin-container)) .taxi-page .form-group select:focus { border-color: #0b7990; outline: 3px solid rgba(11,121,144,.12); }
 .main-content:not(:has(.admin-container)) .taxi-page .btn-book-taxi,
 .main-content:not(:has(.admin-container)) .taxi-page .btn-confirm { min-height: 48px; border-radius: 10px; background: #0b6686; font-size: .98rem; font-weight: 750; }
+.main-content:not(:has(.admin-container)) .taxi-page .taxi-booking-form { gap: 13px; }
+.main-content:not(:has(.admin-container)) .taxi-page .taxi-booking-form .form-group { min-width: 0; }
+.main-content:not(:has(.admin-container)) .taxi-page .taxi-booking-form .form-group label { margin-bottom: 5px; color: #31546b; font-size: .84rem; font-weight: 700; }
+.main-content:not(:has(.admin-container)) .taxi-page .taxi-booking-form .form-group input,
+.main-content:not(:has(.admin-container)) .taxi-page .taxi-booking-form .form-group select { min-height: 42px; padding: 9px 11px; font-size: .9rem; }
+.main-content:not(:has(.admin-container)) .taxi-page .taxi-booking-form .form-row { gap: 12px; }
+.main-content:not(:has(.admin-container)) .taxi-page .taxi-booking-form .btn-book-taxi { min-height: 44px; margin-top: 0; padding: 10px 14px; font-size: .92rem; }
 .main-content:not(:has(.admin-container)) .taxi-map-container { height: 360px; border: 1px solid #e2eaf0; border-radius: 18px; box-shadow: 0 10px 28px rgba(16,42,67,.07); }
 .main-content:not(:has(.admin-container)) .taxi-map-container .map-placeholder { background: radial-gradient(circle at 20% 10%,rgba(114,208,215,.55),transparent 35%),linear-gradient(135deg,#0c5873,#123d5a); }
 .main-content:not(:has(.admin-container)) .taxi-page .info-card { padding: 22px; border: 1px solid #e5edf2; border-radius: 17px; box-shadow: 0 10px 28px rgba(16,42,67,.06); }
