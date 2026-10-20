@@ -1285,11 +1285,18 @@ img { max-width: 100%; }
 }
 .app select:disabled { cursor: not-allowed; opacity: .62; }
 .app select option {
-  padding: 10px 12px;
+  min-height: 40px;
+  padding: 11px 13px;
   color: #18384f;
   background-color: #fff;
+  font-size: .94rem;
+  line-height: 1.5;
 }
-.app select option:checked { color: #07536d; background-color: #e8f5f7; font-weight: 700; }
+.app select option:hover { color: #07536d; background-color: #edf7f8; }
+.app select option:checked { color: #07536d; background-color: #dff1f3; font-weight: 750; }
+.app select option:disabled { color: #94a3b0; background-color: #f3f6f8; }
+.app select optgroup { padding: 7px 10px; color: #0b6686; background-color: #f3f8fa; font-weight: 800; }
+.app select:open { border-color: #16809a !important; box-shadow: 0 0 0 3px rgba(22, 128, 154, .15); }
 .app input[type="checkbox"],
 .app input[type="radio"] { accent-color: #0b7891; cursor: pointer; }
 
