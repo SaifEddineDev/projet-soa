@@ -7,7 +7,7 @@ const Footer = () => (
     <div className="footer-main">
       <div className="footer-content">
         <section className="footer-brand-column">
-          <Link to="/" className="footer-brand" aria-label="TravelHub++, accueil"><img src={`${process.env.PUBLIC_URL || ''}/favion-transparent.png`} alt="" /><span className="footer-brand-copy"><strong>TravelHub++</strong><small>Le voyage en toute simplicité</small></span></Link>
+          <Link to="/" className="footer-brand" aria-label="TravelHub++, accueil"><img src={`${process.env.PUBLIC_URL || ''}/favion-transparent.png`} alt="" /><span className="footer-brand-copy"><strong>TravelHub<span className="brand-plus">++</span></strong><small>Le voyage en toute simplicité</small></span></Link>
           <p className="footer-description">Les essentiels du voyage réunis au même endroit. Imaginez votre séjour, nous vous aidons à le préparer.</p>
           <Link to="/voyages" className="footer-cta">Préparer mon voyage <span aria-hidden="true">→</span></Link>
         </section>

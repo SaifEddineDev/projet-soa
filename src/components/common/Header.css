@@ -5,6 +5,7 @@
 .brand-logo { display: block; width: 52px; height: 52px; border: 1px solid #e7eef2; border-radius: 15px; object-fit: cover; box-shadow: 0 3px 10px rgba(16,42,67,.08); }
 .brand-copy { display: flex; flex-direction: column; line-height: 1.12; }
 .brand-copy strong { color: #0b3956; font-size: 1.25rem; font-weight: 850; letter-spacing: -.035em; }
+.brand-plus { letter-spacing: normal; }
 .brand-copy small { margin-top: 5px; color: #718096; font-size: .68rem; font-weight: 600; letter-spacing: .015em; white-space: nowrap; }
 .nav-menu { flex: 1 1 auto; min-width: 0; }
 .nav-menu ul { display: flex; align-items: center; justify-content: center; gap: clamp(2px, .5vw, 9px); margin: 0; padding: 0; list-style: none; }
@@ -50,6 +51,7 @@
  .header .container { width: calc(100% - 40px); padding: 9px 0; }
  .brand-copy small { font-size: .62rem; }
  .brand-copy strong { font-size: 1.12rem; }
+ .brand-plus { margin-left: 2px; letter-spacing: .12em; }
  .auth-section { display: none; }
  .user-details { display: none; }
 }
