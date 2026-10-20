@@ -563,7 +563,9 @@ img { max-width: 100%; }
 .main-content:not(:has(.admin-container)) .trip-destination,
 .main-content:not(:has(.admin-container)) .trip-duration { display: flex; align-items: center; gap: 6px; margin-bottom: 7px; font-size: .84rem; }
 .main-content:not(:has(.admin-container)) .trip-rating { gap: 8px; margin: 2px 0 8px; }
-.main-content:not(:has(.admin-container)) .trip-rating .rating-value { padding: 3px 7px; border-radius: 7px; color: #a96500; background: #fff4df; font-size: .78rem; font-weight: 800; }
+.main-content:not(:has(.admin-container)) .trip-stars { position: relative; display: inline-block; overflow: hidden; font-size: 1.08rem; letter-spacing: 1px; line-height: 1; white-space: nowrap; }
+.main-content:not(:has(.admin-container)) .trip-stars-empty { display: block; color: #d7e0e7; }
+.main-content:not(:has(.admin-container)) .trip-stars-filled { position: absolute; top: 0; left: 0; overflow: hidden; color: #f5a623; white-space: nowrap; }
 .main-content:not(:has(.admin-container)) .trip-rating-label { color: #718397; font-size: .76rem; }
 .main-content:not(:has(.admin-container)) .trip-description { min-height: 42px; margin-bottom: 12px; font-size: .85rem; line-height: 1.5; }
 .main-content:not(:has(.admin-container)) .included-list { margin-top: auto; }

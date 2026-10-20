@@ -16,7 +16,16 @@ const TripCard = ({ trip }) => {
 
   return (
     <div className="trip-card">
-      <img src={trip.image} alt={trip.title} className="trip-image" />
+      <img
+        src={trip.image}
+        alt={trip.title}
+        className="trip-image"
+        loading="lazy"
+        onError={(event) => {
+          event.currentTarget.onerror = null;
+          event.currentTarget.src = `${process.env.PUBLIC_URL}/chamonix-hotel.jpg`;
+        }}
+      />
       <div className="trip-content">
         <div className="trip-header">
           <h3 className="trip-title">{trip.title}</h3>
@@ -25,7 +34,18 @@ const TripCard = ({ trip }) => {
         <div className="trip-destination">📍 {trip.destination}</div>
         <div className="trip-duration">📅 {trip.duration}</div>
         <div className="trip-rating">
-          <span className="rating-value">{trip.rating}</span>
+          <span
+            className="trip-stars"
+            role="img"
+            aria-label={`Note voyageurs : ${trip.rating} sur 5`}
+          >
+            <span className="trip-stars-empty" aria-hidden="true">★★★★★</span>
+            <span
+              className="trip-stars-filled"
+              aria-hidden="true"
+              style={{ width: `${Math.max(0, Math.min(5, Number(trip.rating) || 0)) * 20}%` }}
+            >★★★★★</span>
+          </span>
           <span className="trip-rating-label">Note voyageurs</span>
         </div>
         <p className="trip-description">{trip.description}</p>
