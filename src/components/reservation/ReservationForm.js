@@ -1,6 +1,7 @@
 // src/components/reservation/ReservationForm.jsx
 import React, { useState, useContext } from 'react';
 import { ReservationContext } from '../../context/ReservationContext';
+import CalendarDatePicker from '../common/CalendarDatePicker';
 import './ReservationForm.css';
 
 const ReservationForm = ({ serviceType, serviceId, price }) => {
@@ -90,9 +91,10 @@ const ReservationForm = ({ serviceType, serviceId, price }) => {
 
       <div className="form-row">
         <div className="form-group">
-          <label>Date d'arrivée *</label>
-          <input
-            type="date"
+          <label htmlFor="reservation-start-date">Date d'arrivée *</label>
+          <CalendarDatePicker
+            id="reservation-start-date"
+            name="dateDebut"
             required
             value={formData.dateDebut}
             onChange={(e) => setFormData({...formData, dateDebut: e.target.value})}
@@ -100,9 +102,10 @@ const ReservationForm = ({ serviceType, serviceId, price }) => {
         </div>
         
         <div className="form-group">
-          <label>Date de départ *</label>
-          <input
-            type="date"
+          <label htmlFor="reservation-end-date">Date de départ *</label>
+          <CalendarDatePicker
+            id="reservation-end-date"
+            name="dateFin"
             required
             value={formData.dateFin}
             onChange={(e) => setFormData({...formData, dateFin: e.target.value})}

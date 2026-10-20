@@ -1,4 +1,5 @@
 ﻿import React from 'react';
+import CalendarDatePicker from '../common/CalendarDatePicker';
 import './TaxiBookingForm.css';
 
 const TaxiBookingForm = ({ bookingInfo, setBookingInfo, onSubmit }) => {
@@ -28,9 +29,11 @@ const TaxiBookingForm = ({ bookingInfo, setBookingInfo, onSubmit }) => {
 
       <div className="form-row">
         <div className="form-group">
-          <label>📅 Date</label>
-          <input
-            type="date"
+          <label htmlFor="taxi-booking-date">📅 Date</label>
+          <CalendarDatePicker
+            id="taxi-booking-date"
+            name="date"
+            ariaLabel="Date de réservation du taxi"
             value={bookingInfo.date}
             onChange={(e) => setBookingInfo({...bookingInfo, date: e.target.value})}
             required

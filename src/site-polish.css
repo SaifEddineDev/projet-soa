@@ -1608,3 +1608,22 @@ img { max-width: 100%; }
     border-radius: 13px;
   }
 }
+
+/* Keep custom calendar popovers visible above search and booking forms. */
+.search-bar:has(.calendar-date-picker) { overflow: visible; }
+.home-page .hero-search-wrap .search-input .calendar-date-field input {
+  min-height: 48px;
+  padding: 10px 55px 10px 14px !important;
+  border: 1px solid #d7e3ea !important;
+  border-radius: 12px !important;
+  color: #18384f !important;
+  background: linear-gradient(180deg, #fff, #f8fbfd) !important;
+  box-shadow: 0 3px 9px rgba(16, 42, 67, .055) !important;
+}
+@media (max-width: 600px) {
+  .home-page .hero-search-wrap .search-input .calendar-date-field input {
+    min-height: 42px;
+    padding: 8px 50px 8px 10px !important;
+    font-size: .78rem;
+  }
+}
