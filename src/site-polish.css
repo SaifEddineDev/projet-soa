@@ -82,7 +82,7 @@ img { max-width: 100%; }
 }
 .main-content:not(:has(.admin-container)) .hotels-container {
   display: grid;
-  grid-template-columns: minmax(250px, 290px) minmax(0, 1fr);
+  grid-template-columns: minmax(250px, 270px) minmax(0, 1fr);
   align-items: start;
   gap: clamp(18px, 2.2vw, 30px);
   flex-wrap: initial;
