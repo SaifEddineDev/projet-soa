@@ -668,8 +668,11 @@ img { max-width: 100%; }
   .main-content:not(:has(.admin-container)) .contact-info .info-card p { margin-bottom: 2px; font-size: .55rem; line-height: 1.2; }
   .main-content:not(:has(.admin-container)) .contact-info .info-card .info-sub { font-size: .5rem; }
 }
-.main-content:not(:has(.admin-container)) .contact-page .contact-info { display: grid !important; width: min(100%, 1080px); grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 12px; margin: 0 auto; }
+.main-content:not(:has(.admin-container)) .contact-page .contact-info { display: grid !important; width: 100%; max-width: none; grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 12px; margin: 0; }
 .main-content:not(:has(.admin-container)) .contact-page .contact-info .info-card { width: 100%; min-width: 0; }
+@media (max-width: 640px) {
+  .main-content:not(:has(.admin-container)) .contact-page .contact-info { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px; }
+}
 
 .main-content:not(:has(.admin-container)) .reservations-page { width: min(100%, 1200px); max-width: 1200px; margin: 0 auto; padding: 0; }
 .main-content:not(:has(.admin-container)) .reservations-container { display: grid; gap: 20px; min-width: 0; }
