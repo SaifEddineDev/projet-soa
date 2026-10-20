@@ -724,6 +724,25 @@ img { max-width: 100%; }
   }
 }
 
+/* Keep every choice field and its options aligned left to right */
+.app select,
+.app select option,
+.app select optgroup {
+  direction: ltr;
+  text-align: left;
+}
+@supports (appearance: base-select) {
+  .app select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .app select::picker-icon {
+    flex: 0 0 auto;
+    margin-inline-start: auto;
+  }
+}
+
 /* Compact desktop contact row while keeping the form and map aligned */
 @media (min-width: 901px) {
   .main-content:not(:has(.admin-container)) .contact-container { gap: 16px; }
