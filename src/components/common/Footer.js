@@ -23,7 +23,7 @@ const Footer = () => (
           <Link to="/contact">Nous contacter</Link>
           <Link to="/profile">Mon profil</Link>
           <a href="mailto:contact@travelhub.com">contact@travelhub.com</a>
-          <a href="tel:+21629058322">+216 29 058 322</a>
+          <a href="tel:+33123456789">+33 1 23 45 67 89</a>
         </nav>
         <div className="footer-note"><span className="footer-note-icon" aria-hidden="true">✦</span><p>Chaque beau voyage commence par une bonne idée.</p><small>Et si le prochain était le vôtre ?</small></div>
       </div>
