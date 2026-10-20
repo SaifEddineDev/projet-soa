@@ -20,9 +20,9 @@ const Header = () => {
   return (
     <header className="header">
       <div className="container">
-        <Link to="/" className="brand" aria-label="TravelHub, accueil" onClick={closeMenu}>
+        <Link to="/" className="brand" aria-label="TravelHub++, accueil" onClick={closeMenu}>
           <img src={`${process.env.PUBLIC_URL || ''}/favion-transparent.png`} alt="" className="brand-logo" />
-          <span className="brand-copy"><strong>TravelHub</strong><small>Le voyage en toute simplicité</small></span>
+          <span className="brand-copy"><strong>TravelHub++</strong><small>Le voyage en toute simplicité</small></span>
         </Link>
 
         <button type="button" className={`mobile-menu-toggle${menuOpen ? ' is-open' : ''}`} aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'} aria-expanded={menuOpen} aria-controls="primary-navigation" onClick={() => setMenuOpen((open) => !open)}>
