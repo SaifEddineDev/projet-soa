@@ -526,6 +526,11 @@
 }
 
 @media print {
+  body:has(.user-reservations-page) .header,
+  body:has(.user-reservations-page) .footer {
+    display: none !important;
+  }
+
   .reservations-header,
   .filters-section,
   .reservation-actions,
