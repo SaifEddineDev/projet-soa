@@ -531,7 +531,23 @@
     display: none !important;
   }
 
-  .reservations-header,
+  body:has(.user-reservations-page) .reservations-header {
+    min-height: 0 !important;
+    margin: 0 0 12px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    color: #000 !important;
+  }
+
+  body:has(.user-reservations-page) .reservations-header h1,
+  body:has(.user-reservations-page) .reservations-header p,
+  body:has(.user-reservations-page) .reservations-header .eyebrow {
+    color: #000 !important;
+  }
+
+  body:has(.user-reservations-page) .reservations-header .header-actions,
   .filters-section,
   .reservation-actions,
   .info-section {
