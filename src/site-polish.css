@@ -670,3 +670,50 @@ img { max-width: 100%; }
 }
 .main-content:not(:has(.admin-container)) .contact-page .contact-info { display: grid !important; width: min(100%, 1080px); grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 12px; margin: 0 auto; }
 .main-content:not(:has(.admin-container)) .contact-page .contact-info .info-card { width: 100%; min-width: 0; }
+
+.main-content:not(:has(.admin-container)) .reservations-page { width: min(100%, 1200px); max-width: 1200px; margin: 0 auto; padding: 0; }
+.main-content:not(:has(.admin-container)) .reservations-container { display: grid; gap: 20px; min-width: 0; }
+.main-content:not(:has(.admin-container)) .reservations-header { min-height: 168px; margin: 0; padding: clamp(26px, 4vw, 42px); border-radius: 20px; }
+.main-content:not(:has(.admin-container)) .reservations-header h1 { font-size: clamp(1.8rem, 3.5vw, 2.65rem); }
+.main-content:not(:has(.admin-container)) .reservations-header .header-content p { font-size: 1rem; }
+.main-content:not(:has(.admin-container)) .reservations-page .header-actions { gap: 10px; }
+.main-content:not(:has(.admin-container)) .reservations-page .btn-export,
+.main-content:not(:has(.admin-container)) .reservations-page .btn-print { min-height: 42px; padding: 9px 14px; border: 1px solid rgba(255,255,255,.28); border-radius: 10px; background: rgba(255,255,255,.12); font-size: .86rem; font-weight: 750; }
+.main-content:not(:has(.admin-container)) .reservations-page .stats-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 0; }
+.main-content:not(:has(.admin-container)) .reservations-page .stat-card { min-width: 0; padding: 18px; border: 1px solid #e5edf2; border-radius: 15px; background: #fff; box-shadow: 0 8px 22px rgba(16,42,67,.055); }
+.main-content:not(:has(.admin-container)) .reservations-page .stat-icon { width: 46px; height: 46px; flex: 0 0 46px; border-radius: 12px; font-size: 1.2rem; }
+.main-content:not(:has(.admin-container)) .reservations-page .stat-info h3 { color: #15344a; font-size: 1.45rem; font-weight: 850; }
+.main-content:not(:has(.admin-container)) .reservations-page .stat-info p { color: #718397; font-size: .85rem; }
+.main-content:not(:has(.admin-container)) .reservations-page .filters-section,
+.main-content:not(:has(.admin-container)) .reservations-page .reservations-list { min-width: 0; padding: 22px; border: 1px solid #e5edf2; border-radius: 16px; background: #fff; box-shadow: 0 8px 24px rgba(16,42,67,.055); }
+.main-content:not(:has(.admin-container)) .reservations-page .filters-header { margin: 0 0 14px; color: #15344a; font-weight: 800; }
+.main-content:not(:has(.admin-container)) .reservations-page .filters-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; gap: 13px; }
+.main-content:not(:has(.admin-container)) .reservations-page .filter-group { min-width: 0; }
+.main-content:not(:has(.admin-container)) .reservations-page .filter-group label { margin: 0 0 5px; color: #31546b; font-size: .82rem; font-weight: 700; }
+.main-content:not(:has(.admin-container)) .reservations-page .filter-group select { width: 100%; min-width: 0; min-height: 42px; padding: 8px 10px; border: 1px solid #dce6ec; border-radius: 9px; background: #fbfdfe; font-size: .88rem; }
+.main-content:not(:has(.admin-container)) .reservations-page .btn-reset-filters { min-height: 42px; margin: 0; padding: 8px 14px; border-radius: 9px; background: #0b6686; font-size: .86rem; font-weight: 750; }
+.main-content:not(:has(.admin-container)) .reservations-page .reservations-list { padding: 22px; }
+.main-content:not(:has(.admin-container)) .reservations-page .list-header { margin: 0 0 16px; padding: 0 0 12px; border-bottom: 1px solid #e5edf2; }
+.main-content:not(:has(.admin-container)) .reservations-page .list-header h2 { color: #15344a; font-size: 1.2rem; font-weight: 850; }
+.main-content:not(:has(.admin-container)) .reservations-page .reservations-grid { gap: 12px; margin: 0; }
+.main-content:not(:has(.admin-container)) .reservations-page .reservation-card { min-width: 0; padding: 18px; border: 1px solid #e5edf2; border-radius: 14px; background: #fff; }
+.main-content:not(:has(.admin-container)) .reservations-page .reservation-card:hover { border-color: #8ab8ca; box-shadow: 0 10px 24px rgba(16,42,67,.08); }
+.main-content:not(:has(.admin-container)) .reservations-page .reservation-id { color: #31546b; border-radius: 7px; background: #eef5f8; }
+.main-content:not(:has(.admin-container)) .reservations-page .reservation-title { color: #15344a; font-size: 1.05rem; font-weight: 800; }
+.main-content:not(:has(.admin-container)) .reservations-page .btn-explore { border-radius: 10px; background: #0b6686; font-size: .92rem; font-weight: 750; }
+@media (max-width: 640px) {
+  .main-content:not(:has(.admin-container)) .reservations-page .reservations-header { min-height: 0; padding: 28px 18px; }
+  .main-content:not(:has(.admin-container)) .reservations-page .header-actions { width: 100%; }
+  .main-content:not(:has(.admin-container)) .reservations-page .header-actions button { flex: 1 1 0; padding: 8px; font-size: .78rem; }
+  .main-content:not(:has(.admin-container)) .reservations-page .stats-cards { gap: 9px; }
+  .main-content:not(:has(.admin-container)) .reservations-page .stat-card { gap: 9px; padding: 12px 9px; }
+  .main-content:not(:has(.admin-container)) .reservations-page .stat-icon { width: 36px; height: 36px; flex-basis: 36px; font-size: 1rem; }
+  .main-content:not(:has(.admin-container)) .reservations-page .stat-info p { font-size: .72rem; }
+  .main-content:not(:has(.admin-container)) .reservations-page .filters-section,
+  .main-content:not(:has(.admin-container)) .reservations-page .reservations-list { padding: 16px 13px; }
+  .main-content:not(:has(.admin-container)) .reservations-page .filters-grid { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .main-content:not(:has(.admin-container)) .reservations-page .reservation-content { grid-template-columns: 36px minmax(0, 1fr); gap: 10px; }
+  .main-content:not(:has(.admin-container)) .reservations-page .reservation-content > :last-child { grid-column: 2; }
+  .main-content:not(:has(.admin-container)) .reservations-page .reservation-icon { font-size: 1.8rem; }
+  .main-content:not(:has(.admin-container)) .reservations-page .reservation-card { padding: 14px; }
+}
