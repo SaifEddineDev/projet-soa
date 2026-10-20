@@ -688,6 +688,41 @@ img { max-width: 100%; }
 .main-content .user-reservations-page .stat-info h3 { font-size: 1.35rem; }
 .main-content .user-reservations-page .stat-info p { font-size: .8rem; }
 .main-content .user-reservations-page .filters-section { display: grid; grid-template-columns: minmax(220px, .9fr) minmax(0, 2.1fr); align-items: center; gap: 16px; margin: 0; padding: 16px 18px; border-radius: 14px; }
+
+/* Contact form and location map share one aligned desktop row */
+@media (min-width: 901px) {
+  .main-content:not(:has(.admin-container)) .contact-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 20px;
+  }
+  .main-content:not(:has(.admin-container)) .contact-page .contact-info,
+  .main-content:not(:has(.admin-container)) .contact-page .faq-section {
+    grid-column: 1 / -1;
+  }
+  .main-content:not(:has(.admin-container)) .contact-page .contact-form-section {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: stretch;
+    margin: 0;
+  }
+  .main-content:not(:has(.admin-container)) .contact-page .map-section {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+  }
+  .main-content:not(:has(.admin-container)) .contact-page .map-container {
+    flex: 1 1 auto;
+    min-height: 320px;
+  }
+  .main-content:not(:has(.admin-container)) .contact-page .map-container iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+  }
+}
 .main-content .user-reservations-page .filters-header { gap: 8px; margin: 0; font-size: .94rem; }
 .main-content .user-reservations-page .filters-header h3 { font-size: 1rem; }
 .main-content .user-reservations-page .filters-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; gap: 10px; }
