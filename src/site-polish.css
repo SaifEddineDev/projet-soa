@@ -724,6 +724,13 @@ img { max-width: 100%; }
   }
 }
 
+@media (min-width: 901px) {
+  .main-content:not(:has(.admin-container)) .contact-page .map-section h2 {
+    position: relative;
+    top: 24px;
+  }
+}
+
 /* Keep every choice field and its options aligned left to right */
 .app select,
 .app select option,
