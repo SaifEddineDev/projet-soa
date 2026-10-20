@@ -98,7 +98,7 @@ const TaxiPage = () => {
       <div className="taxi-container">
         {/* Formulaire de réservation */}
         <div className="booking-section">
-          <div className="booking-steps">
+          <div className="booking-steps" data-step={bookingStep}>
             <div className={`step ${bookingStep >= 1 ? 'active' : ''}`}>
               <div className="step-number">1</div>
               <span>Détails du trajet</span>
