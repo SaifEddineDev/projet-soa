@@ -1467,3 +1467,49 @@ img { max-width: 100%; }
     border: 0;
   }
 }
+
+/* Consistent date and time fields, with a clear calendar trigger throughout the app. */
+.app input[type="date"],
+.app input[type="time"] {
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid #d8e3ea;
+  border-radius: 11px;
+  color: #18384f;
+  color-scheme: light;
+  background: linear-gradient(180deg, #fff, #f8fbfd);
+  accent-color: #0b7891;
+  box-shadow: 0 2px 7px rgba(16, 42, 67, .045);
+  transition: border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
+}
+.app input[type="date"]:hover,
+.app input[type="time"]:hover {
+  border-color: #8bbdca;
+  background-color: #f5fafb;
+}
+.app input[type="date"]:focus-visible,
+.app input[type="time"]:focus-visible {
+  border-color: #16809a;
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(22, 128, 154, .15);
+}
+.app input[type="date"]::-webkit-calendar-picker-indicator,
+.app input[type="time"]::-webkit-calendar-picker-indicator {
+  width: 18px;
+  height: 18px;
+  margin-inline-start: 7px;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: #e8f4f6;
+  cursor: pointer;
+  transition: background-color .18s ease, transform .18s ease;
+}
+.app input[type="date"]::-webkit-calendar-picker-indicator:hover,
+.app input[type="time"]::-webkit-calendar-picker-indicator:hover {
+  background-color: #d7edf0;
+  transform: scale(1.08);
+}
+.app input[type="date"]::-webkit-datetime-edit,
+.app input[type="time"]::-webkit-datetime-edit {
+  padding-block: 1px;
+}
