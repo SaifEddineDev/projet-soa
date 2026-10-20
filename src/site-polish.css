@@ -904,8 +904,15 @@ img { max-width: 100%; }
   }
   .main-content .user-reservations-page .price-amount { display: inline; margin-right: 6px; font-size: 1.05rem; }
   .main-content .user-reservations-page .reservation-actions { gap: 6px; margin-top: 11px; padding-top: 10px; }
-  .main-content .user-reservations-page .reservation-actions button { flex: 1 1 92px; min-height: 36px; padding: 7px 6px; font-size: .72rem; }
+  .main-content .user-reservations-page .reservation-actions button {
+    flex: 1 1 82px;
+    min-height: 32px;
+    padding: 5px 4px;
+    border-radius: 7px;
+    font-size: .66rem;
+    line-height: 1.15;
+  }
 }
 @media (max-width: 360px) {
-  .main-content .user-reservations-page .reservation-actions button { flex-basis: 100%; }
+  .main-content .user-reservations-page .reservation-actions button { flex-basis: 70px; }
 }
